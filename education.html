@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Covenant Education Framework - Grace-based discipleship and Third Place Architecture">
+    <title>Covenant Education - NationOS</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="images/sentinel_simple_final.png">
+    <style>
+        .document-content h1 { font-size: 2.5rem; }
+        .document-content h2 { font-size: 2rem; border-bottom: 2px solid var(--accent-gold); padding-bottom: var(--spacing-xs); margin-top: var(--spacing-lg); }
+        .document-content h3 { font-size: 1.5rem; color: var(--accent-bronze); }
+        .document-content h4 { font-size: 1.25rem; }
+        .document-content strong { color: var(--accent-gold); }
+        .document-content em { color: var(--text-primary); font-style: italic; }
+        .document-content code { background-color: var(--secondary-bg); padding: 2px 6px; border-radius: 4px; }
+        .document-content hr { border: none; border-top: 1px solid var(--border-color); margin: var(--spacing-md) 0; }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <img src="images/nationos_logo.png" alt="NationOS Logo">
+                <span class="logo-text">NationOS</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="constitution.html">Constitution</a></li>
+                <li><a href="declaration.html">Declaration</a></li>
+                <li><a href="pillars.html">12 Pillars</a></li>
+                <li><a href="education.html" class="active">Education</a></li>
+                <li><a href="join.html">Join</a></li>
+                <li><a href="resources.html">Resources</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="hero" style="padding: var(--spacing-lg) 0;">
+        <div class="container">
+            <h1>Covenant Education Framework</h1>
+            <p>Grace-Based Discipleship & Third Place Architecture</p>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section style="padding: var(--spacing-md) 0; background-color: var(--secondary-bg);">
+        <div class="container">
+            <div class="card">
+                <h3>Building the Hospital</h3>
+                <p>
+                    The Covenant Education Framework is not just another homeschool curriculum or Christian school model. 
+                    It is the <strong>healing mechanism</strong> for family and community disruption - the space where fathers are connected, 
+                    mothers are supported, children are known, and sin is brought into light through relationship.
+                </p>
+                <p style="margin-top: var(--spacing-sm);">
+                    This is the environment that prevents the terrible stories of isolation and hidden sin. 
+                    This is where grace-based discipleship makes authenticity safe and transformation possible.
+                </p>
+                <p style="margin-top: var(--spacing-sm); text-align: center;">
+                    <a href="documents/Covenant_Education_Framework_FINAL_v2.0.md" download class="btn btn-primary">
+                        Download Full Framework (Markdown)
+                    </a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Content -->
+    <section>
+        <div class="container">
+            <div class="document-content" id="education-content">
+                <!-- Content will be loaded from converted HTML -->
+                <script>
+                    fetch('documents/education_content.html')
+                        .then(response => response.text())
+                        .then(html => {
+                            document.getElementById('education-content').innerHTML = html;
+                        })
+                        .catch(error => {
+                            console.error('Error loading education:', error);
+                            document.getElementById('education-content').innerHTML = 
+                                '<p>Error loading education content. Please <a href="documents/Covenant_Education_Framework_FINAL_v2.0.md" download>download the full document</a>.</p>';
+                        });
+                </script>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section>
+        <div class="container">
+            <div class="card" style="text-align: center; padding: var(--spacing-lg);">
+                <h2>Join a Learning Pod or Start One</h2>
+                <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto var(--spacing-md);">
+                    We are establishing covenant learning pods and third place spaces where families can gather for 
+                    grace-based education, multi-generational fellowship, and authentic community.
+                </p>
+                <div style="display: flex; gap: var(--spacing-md); justify-content: center; flex-wrap: wrap; margin-top: var(--spacing-md);">
+                    <a href="join.html" class="btn btn-primary">Join the Covenant</a>
+                    <a href="resources.html" class="btn btn-secondary">Access Resources</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>NationOS</h4>
+                    <p>A Covenant Alternative to Digital Tyranny</p>
+                    <p style="margin-top: var(--spacing-sm);">Building sovereign Christian communities under Christ's Lordship.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="constitution.html">Constitution</a></li>
+                        <li><a href="declaration.html">Declaration</a></li>
+                        <li><a href="pillars.html">12 Pillars</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Get Involved</h4>
+                    <ul>
+                        <li><a href="join.html">Join the Covenant</a></li>
+                        <li><a href="join.html#builder">Become a Builder</a></li>
+                        <li><a href="education.html">Covenant Education</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="https://x.com/SovereignSentinel" target="_blank">X/Twitter: @SovereignSentinel</a></li>
+                        <li><a href="https://godmanmarkets.pls" target="_blank">GodManMarkets.pls</a></li>
+                        <li><a href="https://libertythroughtruth.org" target="_blank">Liberty Through Truth Foundation</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 NationOS | Liberty Through Truth Foundation | Under Christ's Lordship</p>
+                <p style="margin-top: var(--spacing-xs);">"Unless the LORD builds the house, those who build it labor in vain." - Psalm 127:1</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,11 @@
+# Netlify Redirects File
+# Simple redirect rules (alternative to netlify.toml)
+
+# Redirect www to non-www
+https://www.nationos.org/* https://nationos.org/:splat 301!
+
+# Redirect old paths (if you had any previous site)
+# /old-path /new-path 301
+
+# SPA fallback (serve index.html for all routes)
+/* /index.html 200

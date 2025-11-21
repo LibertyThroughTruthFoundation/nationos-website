@@ -1,0 +1,67 @@
+# Netlify Configuration for NationOS.org
+# This file optimizes deployment and sets up redirects
+
+[build]
+  # No build command needed for static site
+  publish = "."
+  
+[build.environment]
+  # Node version (not needed for static, but good to specify)
+  NODE_VERSION = "18"
+
+# Redirect rules
+[[redirects]]
+  # Redirect www to non-www
+  from = "https://www.nationos.org/*"
+  to = "https://nationos.org/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  # SPA-style routing fallback (in case you add client-side routing later)
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Headers for security and performance
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Security headers
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    
+    # Performance headers
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    # Don't cache HTML files (so updates are immediate)
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    # Cache images for 1 year
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    # Cache CSS for 1 year
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/documents/*"
+  [headers.values]
+    # Cache documents for 1 week (in case you update them)
+    Cache-Control = "public, max-age=604800"
+
+# Custom 404 page (optional - create this if you want)
+# [[redirects]]
+#   from = "/*"
+#   to = "/404.html"
+#   status = 404
