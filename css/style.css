@@ -425,25 +425,14 @@ section:nth-child(even) {
   width: 80px;
   height: 80px;
   margin: 0 auto var(--spacing-sm);
-  animation: floatSpin 8s ease-in-out infinite;
   filter: drop-shadow(0 4px 8px rgba(212, 175, 55, 0.3));
   position: relative;
   z-index: 3;
 }
 
-.pillar-card:hover .pillar-icon {
-  animation-play-state: paused;
-}
 
-/* Animations for Pillar Icons */
-@keyframes floatSpin {
-  0%, 100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-10px) rotate(180deg);
-  }
-}
+
+
 
 .pillar-card h3 {
   font-size: 1.25rem;
