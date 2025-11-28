@@ -2,14 +2,21 @@
 /* Dark theme with gold accents matching Richard Heart HEX/PLS aesthetic */
 
 :root {
-  /* Colors - Dark theme with gold/bronze accents */
-  --primary-bg: #0a0a0a;
-  --secondary-bg: #1a1a1a;
-  --card-bg: #222;
-  --border-color: #333;
+  /* THE SOVEREIGN THEME - Digital Citadel Aesthetic */
+  --kingdom-black: #050505;
+  --kingdom-gold: #D4AF37;       /* The color of the Ark */
+  --kingdom-gold-dim: #8a701e;
+  --kingdom-silver: #C0C0C0;
+  --kingdom-gray: #1a1a1a;
   --text-primary: #e0e0e0;
   --text-secondary: #a0a0a0;
-  --accent-gold: #d4af37;
+  
+  /* Legacy aliases for compatibility */
+  --primary-bg: #050505;
+  --secondary-bg: #1a1a1a;
+  --card-bg: #0a0a0a;
+  --border-color: #333;
+  --accent-gold: #D4AF37;
   --accent-bronze: #cd7f32;
   --accent-blue: #4a90e2;
   
@@ -21,6 +28,8 @@
   --spacing-xl: 6rem;
   
   /* Typography */
+  --font-heading: 'Cinzel', serif; /* Biblical/Authoritative */
+  --font-body: 'Merriweather', serif; /* Readable/Classic */
   --font-display: 'Cinzel', serif;
   --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   --font-serif: 'Crimson Text', Georgia, 'Times New Roman', serif;
@@ -33,22 +42,24 @@
 }
 
 body {
-  font-family: var(--font-sans);
-  background-color: var(--primary-bg);
+  background-color: var(--kingdom-black);
   color: var(--text-primary);
+  font-family: var(--font-body);
   line-height: 1.6;
   font-size: 16px;
+  margin: 0;
 }
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-display);
+  font-family: var(--font-heading);
+  color: var(--kingdom-gold);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 1rem;
   font-weight: 700;
   line-height: 1.2;
-  margin-bottom: var(--spacing-sm);
-  color: var(--accent-gold);
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  letter-spacing: 0.05em;
 }
 
 h1 { font-size: 3rem; }
@@ -595,3 +606,155 @@ footer {
 .py-sm { padding-top: var(--spacing-sm); padding-bottom: var(--spacing-sm); }
 .py-md { padding-top: var(--spacing-md); padding-bottom: var(--spacing-md); }
 .py-lg { padding-top: var(--spacing-lg); padding-bottom: var(--spacing-lg); }
+
+/* COVENANT BUTTONS */
+.btn-covenant {
+    background: transparent;
+    border: 2px solid var(--kingdom-gold);
+    color: var(--kingdom-gold);
+    padding: 12px 28px;
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    font-family: var(--font-heading);
+}
+
+.btn-covenant:hover {
+    background: var(--kingdom-gold);
+    color: var(--kingdom-black);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+}
+
+/* ECONOMY SECTION - Three Storehouses */
+.economy-section {
+    background: linear-gradient(to bottom, #111, #000);
+    padding: 4rem 2rem;
+    border-top: 1px solid var(--kingdom-gold);
+    text-align: center;
+}
+
+.economy-section .subtitle {
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.economy-section .crypto-note {
+    color: var(--kingdom-silver);
+    font-size: 1rem;
+    margin-bottom: 3rem;
+}
+
+.storehouse-card {
+    border: 1px solid var(--kingdom-gray);
+    background: #0a0a0a;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.storehouse-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--kingdom-gold);
+}
+
+.storehouse-card h3 { 
+    color: var(--kingdom-silver); 
+    font-size: 1.2rem; 
+    margin-bottom: 1rem;
+}
+
+.storehouse-card .purpose {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.address-box {
+    background: #000;
+    padding: 1rem;
+    border-radius: 4px;
+    border: 1px solid var(--kingdom-gold-dim);
+}
+
+.ens-name { 
+    display: block; 
+    font-family: monospace; 
+    color: var(--kingdom-gold); 
+    font-size: 1.1rem; 
+    margin-bottom: 1rem;
+    word-break: break-all;
+}
+
+.btn-copy {
+    background: var(--kingdom-gold-dim);
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 4px;
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.btn-copy:hover { 
+    background: var(--kingdom-gold); 
+    color: #000; 
+}
+
+/* ARMORY SECTION - Sacred Texts */
+.armory-section { 
+    padding: 4rem 2rem; 
+    text-align: center; 
+    background: var(--kingdom-black);
+}
+
+.book-card { 
+    padding: 2rem; 
+    border: 1px solid #333; 
+    transition: transform 0.2s, border-color 0.3s; 
+    background: var(--card-bg);
+    border-radius: 8px;
+}
+
+.book-card:hover { 
+    transform: translateY(-5px); 
+    border-color: var(--kingdom-gold); 
+}
+
+.book-card.highlight { 
+    border: 2px solid var(--kingdom-gold); 
+    background: #111; 
+}
+
+.book-card .icon { 
+    font-size: 3rem; 
+    margin-bottom: 1rem; 
+}
+
+.book-card h3 {
+    color: var(--kingdom-gold);
+    margin-bottom: 0.5rem;
+}
+
+.book-card p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.btn-text { 
+    color: var(--text-primary); 
+    text-decoration: underline; 
+    transition: color 0.3s ease;
+}
+
+.btn-text:hover {
+    color: var(--kingdom-gold);
+}
