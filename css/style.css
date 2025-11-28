@@ -135,6 +135,8 @@ nav {
 .logo img {
   height: 50px;
   width: auto;
+  background: transparent;
+  mix-blend-mode: lighten;
 }
 
 .logo-text {
