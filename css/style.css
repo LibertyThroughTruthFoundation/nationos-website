@@ -809,3 +809,97 @@ footer {
   filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.9)) 
           drop-shadow(0 0 25px rgba(212, 175, 55, 0.5));
 }
+
+/* ========================================
+   UNIFIED HEADER GLOW
+   ======================================== */
+.header-logo-glow {
+    height: 50px;
+    filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.5));
+    transition: filter 0.3s ease;
+}
+
+.header-logo-glow:hover {
+    filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.8));
+}
+
+/* ========================================
+   DOCUMENT READER STYLING
+   ======================================== */
+.document-reader {
+    background: var(--kingdom-black, #050505);
+    color: var(--text-primary, #e5e5e5);
+    padding: 4rem 2rem;
+}
+
+.doc-title {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    color: var(--kingdom-gold, #D4AF37);
+    text-align: center;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.doc-meta {
+    text-align: center;
+    color: var(--kingdom-gold-dim, #A0892C);
+    font-style: italic;
+    margin-bottom: 3rem;
+}
+
+.doc-content {
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: 'Merriweather', serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.doc-content h3 {
+    font-family: 'Cinzel', serif;
+    color: var(--kingdom-gold, #D4AF37);
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.doc-content h4 {
+    color: var(--kingdom-gold-dim, #A0892C);
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.gold-divider {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--kingdom-gold, #D4AF37), transparent);
+    margin: 3rem 0;
+}
+
+.grievance-list {
+    list-style: none;
+    padding: 0;
+}
+
+.grievance-list li {
+    margin-bottom: 1.5rem;
+    padding-left: 1rem;
+    border-left: 3px solid var(--kingdom-gold-dim, #A0892C);
+}
+
+.callout-box {
+    border: 1px solid var(--kingdom-gold, #D4AF37);
+    background: #111;
+    padding: 2rem;
+    margin-top: 3rem;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.callout-box h4 {
+    color: var(--kingdom-gold, #D4AF37);
+    margin-top: 0;
+}
