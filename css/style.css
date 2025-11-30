@@ -903,3 +903,205 @@ footer {
     color: var(--kingdom-gold, #D4AF37);
     margin-top: 0;
 }
+
+
+/* ========================================
+   COVENANT BANNER & MANUSCRIPTS SECTION
+   ======================================== */
+
+/* Covenant Banner */
+.covenant-banner {
+  background: linear-gradient(180deg, var(--kingdom-black) 0%, #0A1931 50%, var(--kingdom-black) 100%);
+  padding: var(--spacing-md) 0;
+  margin-bottom: var(--spacing-lg);
+}
+
+.covenant-banner-image {
+  width: 100%;
+  max-width: 1400px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(212, 175, 55, 0.2);
+}
+
+/* Manuscripts Section */
+.manuscripts-section {
+  background: linear-gradient(135deg, #0A1931 0%, var(--kingdom-black) 50%, #0A1931 100%);
+  padding: var(--spacing-xl) 0;
+  border-top: 2px solid var(--kingdom-gold);
+  border-bottom: 2px solid var(--kingdom-gold);
+  position: relative;
+}
+
+.manuscripts-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.manuscripts-header {
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.manuscripts-header h2 {
+  font-size: 3rem;
+  color: var(--kingdom-gold);
+  text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+  margin-bottom: var(--spacing-sm);
+}
+
+.manuscripts-subtitle {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  font-style: italic;
+  margin-bottom: var(--spacing-md);
+}
+
+.manuscripts-intro {
+  max-width: 800px;
+  margin: 0 auto var(--spacing-lg);
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.manuscripts-intro p {
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-primary);
+}
+
+.manuscripts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+  position: relative;
+  z-index: 1;
+}
+
+.manuscript-card {
+  background: linear-gradient(135deg, rgba(10, 25, 49, 0.8) 0%, rgba(5, 5, 5, 0.9) 100%);
+  border: 2px solid var(--kingdom-gold);
+  border-radius: 12px;
+  padding: var(--spacing-lg);
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+}
+
+.manuscript-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(212, 175, 55, 0.3);
+  border-color: var(--kingdom-gold);
+  background: linear-gradient(135deg, rgba(10, 25, 49, 1) 0%, rgba(5, 5, 5, 1) 100%);
+}
+
+.manuscript-icon {
+  font-size: 4rem;
+  margin-bottom: var(--spacing-md);
+  filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5));
+}
+
+.manuscript-card h3 {
+  font-size: 1.8rem;
+  color: var(--kingdom-gold);
+  margin-bottom: var(--spacing-sm);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.manuscript-card p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-md);
+  line-height: 1.6;
+}
+
+.btn-manuscript {
+  background: linear-gradient(135deg, var(--kingdom-gold) 0%, var(--kingdom-gold-dim) 100%);
+  color: var(--kingdom-black);
+  padding: 0.75rem 2rem;
+  border-radius: 6px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+}
+
+.btn-manuscript:hover {
+  background: linear-gradient(135deg, #FFD700 0%, var(--kingdom-gold) 100%);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+  transform: translateY(-2px);
+}
+
+.manuscripts-cta {
+  text-align: center;
+  margin-top: var(--spacing-xl);
+  position: relative;
+  z-index: 1;
+}
+
+.manuscripts-value-statement {
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-lg);
+  line-height: 1.8;
+}
+
+.manuscripts-value-statement strong {
+  color: var(--kingdom-gold);
+  font-weight: 700;
+}
+
+.btn-lg {
+  font-size: 1.2rem;
+  padding: 1rem 3rem;
+}
+
+/* Prophetic Color Accents */
+.manuscripts-section .btn-primary {
+  background: linear-gradient(135deg, #2E7D32 0%, #E65100 100%);
+  border: 2px solid var(--kingdom-gold);
+}
+
+.manuscripts-section .btn-primary:hover {
+  background: linear-gradient(135deg, #388E3C 0%, #F57C00 100%);
+  box-shadow: 0 8px 24px rgba(46, 125, 50, 0.4);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .manuscripts-header h2 {
+    font-size: 2rem;
+  }
+  
+  .manuscripts-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .manuscripts-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+  
+  .covenant-banner {
+    padding: var(--spacing-sm) 0;
+  }
+  
+  .manuscripts-section {
+    padding: var(--spacing-lg) 0;
+  }
+}
