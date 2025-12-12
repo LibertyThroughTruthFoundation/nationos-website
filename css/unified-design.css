@@ -461,3 +461,26 @@ footer {
 .fade-in {
   animation: fadeInUp 0.8s ease-out;
 }
+
+
+/* ========================================
+   BUTTON VARIANTS
+   ======================================== */
+
+.btn-small {
+  padding: 0.5rem 1.25rem;
+  font-size: 0.9rem;
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 2px solid var(--kingdom-gold);
+  color: var(--kingdom-gold);
+}
+
+.btn-secondary:hover {
+  background: var(--kingdom-gold);
+  color: var(--deep-background);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-gold);
+}
