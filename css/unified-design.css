@@ -152,6 +152,11 @@ header {
   height: 50px;
   width: auto;
   filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.3));
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  background: transparent;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 nav ul {
