@@ -1105,3 +1105,134 @@ footer {
     padding: var(--spacing-lg) 0;
   }
 }
+
+
+/* ========================================
+   PWA INSTALLATION COMPONENTS
+   ======================================== */
+
+/* PWA Install Section */
+#pwa-install-section {
+  animation: slideInUp 0.6s ease-out;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* PWA Install Buttons */
+#pwa-install-btn:hover {
+  background: #f0c44d !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+  transition: all 0.3s ease;
+}
+
+#pwa-manual-btn:hover {
+  background: #d4af37 !important;
+  color: #1a365d !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+  transition: all 0.3s ease;
+}
+
+#pwa-close-btn:hover {
+  background: #f0c44d !important;
+  transform: scale(1.02);
+  transition: all 0.3s ease;
+}
+
+/* PWA Instructions Modal */
+#pwa-instructions-modal {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Modal Content Animation */
+#pwa-instructions-modal > div {
+  animation: modalSlideIn 0.4s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Mobile Responsive for PWA Components */
+@media (max-width: 768px) {
+  #pwa-install-section {
+    margin: 1rem;
+    padding: 1rem !important;
+  }
+  
+  #pwa-install-section h3 {
+    font-size: 1.3rem !important;
+  }
+  
+  #pwa-install-section p {
+    font-size: 0.95rem !important;
+  }
+  
+  #pwa-install-btn,
+  #pwa-manual-btn {
+    display: block !important;
+    width: 100%;
+    margin: 0.5rem 0 !important;
+  }
+  
+  #pwa-instructions-modal > div {
+    max-width: 90% !important;
+    padding: 1.5rem !important;
+  }
+  
+  #pwa-instructions-modal h3 {
+    font-size: 1.3rem !important;
+  }
+  
+  #pwa-instructions-modal h4 {
+    font-size: 1rem !important;
+  }
+  
+  #pwa-instructions-modal p {
+    font-size: 0.9rem !important;
+  }
+}
+
+/* PWA Button Accessibility */
+#pwa-install-btn:focus,
+#pwa-manual-btn:focus,
+#pwa-close-btn:focus {
+  outline: 3px solid #d4af37;
+  outline-offset: 2px;
+}
+
+/* PWA Install Section Glow Effect */
+#pwa-install-section {
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.2);
+}
+
+#pwa-install-section:hover {
+  box-shadow: 0 6px 30px rgba(212, 175, 55, 0.3);
+  transition: box-shadow 0.3s ease;
+}

@@ -11,6 +11,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/png" href="images/sentinel_simple_final.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#1a365d">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Sovereign Arch">
 </head>
 <body>
     <!-- Header & Navigation -->
@@ -272,6 +277,56 @@
         alert("Covenant Address Copied: " + address);
     }
     </script>
+
+    <!-- PWA Install Section -->
+    <section id="pwa-install-section" style="display: none; background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%); padding: 1.5rem; margin: 2rem auto; border-radius: 12px; border: 2px solid #d4af37; max-width: 800px;">
+        <div style="text-align: center; color: white;">
+            <h3 style="color: #d4af37; margin-bottom: 0.5rem; font-family: 'Cinzel', serif;">📱 Install Sovereign Architecture</h3>
+            <p style="margin-bottom: 1rem; opacity: 0.9; font-family: 'Crimson Text', serif;">Get the full app experience with offline access to the NationOS ARK</p>
+            
+            <button id="pwa-install-btn" style="background: #d4af37; color: #1a365d; border: none; padding: 12px 24px; border-radius: 8px; font-weight: bold; cursor: pointer; margin: 0.5rem; font-family: 'Cinzel', serif; display: none;">
+                ⚡ Install App
+            </button>
+            
+            <button id="pwa-manual-btn" style="background: transparent; color: #d4af37; border: 2px solid #d4af37; padding: 12px 24px; border-radius: 8px; font-weight: bold; cursor: pointer; margin: 0.5rem; font-family: 'Cinzel', serif;">
+                📖 Show Instructions
+            </button>
+        </div>
+    </section>
+
+    <!-- PWA Instructions Modal -->
+    <div id="pwa-instructions-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 1000; align-items: center; justify-content: center;">
+        <div style="background: #1a365d; color: white; padding: 2rem; border-radius: 16px; border: 3px solid #d4af37; max-width: 500px; margin: 1rem; box-shadow: 0 10px 40px rgba(212, 175, 55, 0.3);">
+            <h3 style="color: #d4af37; text-align: center; margin-bottom: 1.5rem; font-family: 'Cinzel', serif;">📱 Installation Guide</h3>
+            
+            <div style="margin-bottom: 1.5rem; font-family: 'Crimson Text', serif;">
+                <h4 style="color: #d4af37; margin-bottom: 0.5rem; font-family: 'Cinzel', serif; font-size: 1.1rem;">Android/Chrome:</h4>
+                <p style="margin: 0.3rem 0;">1. Tap Chrome's menu (⋮)</p>
+                <p style="margin: 0.3rem 0;">2. Select "Add to Home screen"</p>
+                <p style="margin: 0.3rem 0;">3. Confirm installation</p>
+            </div>
+            
+            <div style="margin-bottom: 1.5rem; font-family: 'Crimson Text', serif;">
+                <h4 style="color: #d4af37; margin-bottom: 0.5rem; font-family: 'Cinzel', serif; font-size: 1.1rem;">iPhone/Safari:</h4>
+                <p style="margin: 0.3rem 0;">1. Tap the Share icon (⬆️)</p>
+                <p style="margin: 0.3rem 0;">2. Scroll to "Add to Home Screen"</p>
+                <p style="margin: 0.3rem 0;">3. Tap "Add"</p>
+            </div>
+            
+            <div style="margin-bottom: 1.5rem; font-family: 'Crimson Text', serif;">
+                <h4 style="color: #d4af37; margin-bottom: 0.5rem; font-family: 'Cinzel', serif; font-size: 1.1rem;">Desktop (Chrome/Edge):</h4>
+                <p style="margin: 0.3rem 0;">Look for the install icon in your address bar</p>
+                <p style="margin: 0.3rem 0;">Or use browser menu → "Install App"</p>
+            </div>
+            
+            <button id="pwa-close-btn" style="background: #d4af37; color: #1a365d; border: none; padding: 12px 24px; border-radius: 8px; font-weight: bold; cursor: pointer; width: 100%; font-family: 'Cinzel', serif;">
+                Got It! ⚔️
+            </button>
+        </div>
+    </div>
+
+    <!-- PWA JavaScript -->
+    <script src="js/pwa-install.js"></script>
 
     <!-- Footer -->
     <footer>
