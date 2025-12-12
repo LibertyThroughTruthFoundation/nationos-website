@@ -1,0 +1,10 @@
+# robots.txt for NationOS.org
+# Allow all search engines to index the site
+
+User-agent: *
+Allow: /
+
+# Sitemap location (you can generate this later)
+# Sitemap: https://nationos.org/sitemap.xml
+
+# Disallow nothing - we want full visibility
