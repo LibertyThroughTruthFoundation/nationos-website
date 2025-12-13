@@ -135,8 +135,16 @@ nav {
 .logo img {
   height: 50px;
   width: auto;
-  background: transparent;
-  mix-blend-mode: lighten;
+  background: transparent !important;
+  mix-blend-mode: normal !important;
+  border: none !important;
+}
+
+/* Hero emblem transparency fix */
+.hero img {
+  background: transparent !important;
+  mix-blend-mode: normal !important;
+  border: none !important;
 }
 
 .logo-text {
