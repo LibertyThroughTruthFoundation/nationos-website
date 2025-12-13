@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Sovereign Research</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: linear-gradient(135deg, #1a365d 0%, #0f172a 100%);
+            color: #f0f0f0;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 12px;
+            padding: 3rem 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            color: #d4af37;
+            text-align: center;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 8px rgba(212, 175, 55, 0.4);
+        }
+        
+        .subtitle {
+            text-align: center;
+            font-size: 1.125rem;
+            color: #cbd5e0;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+        
+        h2 {
+            font-size: 1.75rem;
+            color: #d4af37;
+            margin: 2rem 0 1rem 0;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+            padding-bottom: 0.5rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            color: #e2e8f0;
+            font-size: 1.0625rem;
+        }
+        
+        .wallet-address {
+            background: rgba(0, 0, 0, 0.3);
+            border: 2px solid #d4af37;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .wallet-address-label {
+            font-size: 0.875rem;
+            color: #d4af37;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .address {
+            font-family: 'Courier New', monospace;
+            font-size: 1.125rem;
+            color: #ffffff;
+            word-break: break-all;
+            background: rgba(212, 175, 55, 0.1);
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 0.5rem 0;
+        }
+        
+        .copy-btn {
+            background: #d4af37;
+            color: #0f172a;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .copy-btn:hover {
+            background: #f0d678;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
+        }
+        
+        .info-box {
+            background: rgba(212, 175, 55, 0.1);
+            border-left: 4px solid #d4af37;
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+        
+        .info-box strong {
+            color: #d4af37;
+        }
+        
+        ol, ul {
+            margin: 1rem 0 1rem 2rem;
+            color: #e2e8f0;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+            font-size: 1.0625rem;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+            color: #cbd5e0;
+            font-style: italic;
+        }
+        
+        .cross {
+            color: #d4af37;
+            font-size: 1.5rem;
+        }
+        
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem 0.5rem;
+            }
+            
+            .container {
+                padding: 2rem 1.5rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .address {
+                font-size: 0.875rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Support This Work</h1>
+        <p class="subtitle">Censorship-Resistant Donations for Independent Research</p>
+        
+        <p>Thank you for considering supporting this work. In an era of increasing financial persecution against truth-tellers, I've set up a way to receive support that cannot be censored, frozen, or controlled by hostile corporations.</p>
+        
+        <p>This donation system uses cryptocurrency on the PulseChain network, allowing you to contribute in a way that protects both your privacy and my ability to continue this research.</p>
+        
+        <div class="wallet-address">
+            <div class="wallet-address-label">Donation Address</div>
+            <div class="address" id="walletAddress">0xYourDonationWalletAddressHere</div>
+            <button class="copy-btn" onclick="copyAddress()">Copy Address</button>
+        </div>
+        
+        <div class="info-box">
+            <p><strong>Network:</strong> PulseChain (Chain ID: 369)</p>
+            <p><strong>Recommended Asset:</strong> USDC.e (Stablecoin - always worth $1 USD)</p>
+            <p><strong>Also Accepts:</strong> PLS, pWBTC, or any PulseChain token</p>
+        </div>
+        
+        <h2>How to Donate (For Beginners)</h2>
+        
+        <p>If you're new to cryptocurrency, don't worry! Here's a simple step-by-step guide:</p>
+        
+        <ol>
+            <li><strong>Get a Wallet:</strong> Download MetaMask (a free browser extension) from <a href="https://metamask.io" style="color: #d4af37;">metamask.io</a></li>
+            <li><strong>Add PulseChain Network:</strong> Follow MetaMask's instructions to add PulseChain (Network ID: 369)</li>
+            <li><strong>Get USDC.e:</strong> You can buy PLS on an exchange and swap it for USDC.e on PulseX</li>
+            <li><strong>Send Donation:</strong> Copy my address above and send your desired amount</li>
+        </ol>
+        
+        <p>Your donation arrives instantly and cannot be intercepted or frozen by any third party.</p>
+        
+        <h2>Why Cryptocurrency?</h2>
+        
+        <p>Traditional payment processors (PayPal, Stripe, Patreon) have increasingly censored Christian researchers and truth-tellers. Accounts are frozen, funds are seized, and creators are deplatformed for "violating community guidelines."</p>
+        
+        <p>Cryptocurrency provides a censorship-resistant alternative. It's not about speculation or "getting rich"—it's about <strong>financial sovereignty</strong> and the ability to support independent work without asking permission from hostile corporations.</p>
+        
+        <div class="info-box">
+            <p><strong>Privacy Note:</strong> Cryptocurrency transactions are pseudonymous. You don't need to reveal your identity to donate. However, transactions are recorded on a public blockchain. For maximum privacy, future tools (like the NationOS Shielded Wallet) will provide complete transaction privacy using zero-knowledge proofs.</p>
+        </div>
+        
+        <h2>Questions?</h2>
+        
+        <p>If you have questions about how to donate or need help setting up a wallet, feel free to reach out:</p>
+        
+        <ul>
+            <li>Email: <a href="mailto:your-email@example.com" style="color: #d4af37;">your-email@example.com</a></li>
+            <li>Contact form: <a href="https://your-website.com/contact" style="color: #d4af37;">your-website.com/contact</a></li>
+        </ul>
+        
+        <div class="footer">
+            <p><em>Thank you for supporting independent, covenant-aligned research.</em></p>
+            <p class="cross">☧</p>
+            <p><strong>Soli Deo Gloria</strong></p>
+        </div>
+    </div>
+    
+    <script>
+        function copyAddress() {
+            const address = document.getElementById('walletAddress').textContent;
+            navigator.clipboard.writeText(address).then(function() {
+                const btn = document.querySelector('.copy-btn');
+                btn.textContent = 'Copied!';
+                btn.style.background = '#4ade80';
+                setTimeout(function() {
+                    btn.textContent = 'Copy Address';
+                    btn.style.background = '#d4af37';
+                }, 2000);
+            }, function(err) {
+                alert('Failed to copy address. Please copy manually.');
+            });
+        }
+    </script>
+</body>
+</html>
