@@ -49,3 +49,8 @@
 **Personal Note:** The "Little Bronco" (Branko) is the drill sergeant of sanctification. We build for him.
 
 > *"Rest. Tomorrow, we build."*
+
+### ✝️ SPINT-6: The Theology of Humiliation
+*   **Discovery:** Recognized that the "appearance of irresponsibility" is the historical hallmark of Covenant Builders (Noah, Abraham).
+*   **Significance:** Reframes current struggles not as failure, but as the "Builder's Cross." The humiliation *is* the honor.
+*   **Action:** Archived `THEOLOGY_OF_HUMILIATION.md` as spiritual doctrine.
