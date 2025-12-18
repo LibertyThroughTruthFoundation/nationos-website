@@ -1,13 +1,16 @@
 /**
- * PWA Installation Manager
+ * NationOS PWA Installation Manager
  * Handles PWA installation prompts and user guidance
- * For Sovereign Architecture - NationOS ARK
+ * Version: 2.0.0
+ * 
+ * For the Outer Court - NationOS.io
  */
 
 class PWAInstallManager {
     constructor() {
         this.deferredPrompt = null;
         this.isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        this.isAndroid = /Android/.test(navigator.userAgent);
         this.isStandalone = window.matchMedia('(display-mode: standalone)').matches || 
                            window.navigator.standalone || 
                            document.referrer.includes('android-app://');
@@ -16,26 +19,33 @@ class PWAInstallManager {
     }
 
     init() {
-        console.log('PWA Install Manager initialized');
-        console.log('Is iOS:', this.isIOS);
-        console.log('Is Standalone:', this.isStandalone);
+        console.log('[NationOS PWA] Initializing...');
+        console.log('[NationOS PWA] Platform - iOS:', this.isIOS, 'Android:', this.isAndroid);
+        console.log('[NationOS PWA] Standalone mode:', this.isStandalone);
         
         // Listen for beforeinstallprompt event (Chrome/Edge/Android)
         window.addEventListener('beforeinstallprompt', (e) => {
-            console.log('beforeinstallprompt event fired');
+            console.log('[NationOS PWA] beforeinstallprompt event fired');
             e.preventDefault();
             this.deferredPrompt = e;
             this.showInstallButton();
         });
 
+        // Listen for successful installation
+        window.addEventListener('appinstalled', (e) => {
+            console.log('[NationOS PWA] App installed successfully!');
+            this.hideInstallUI();
+            this.deferredPrompt = null;
+        });
+
         // Check if already installed
         if (this.isStandalone) {
-            console.log('App is already installed');
+            console.log('[NationOS PWA] App is already installed');
             this.hideInstallUI();
         } else {
             // Show install section for iOS users (no beforeinstallprompt on iOS)
             if (this.isIOS) {
-                console.log('iOS detected - showing manual instructions');
+                console.log('[NationOS PWA] iOS detected - showing manual instructions');
                 this.showInstallSection();
             }
         }
@@ -51,7 +61,7 @@ class PWAInstallManager {
         const installBtn = document.getElementById('pwa-install-btn');
         if (installBtn) {
             installBtn.style.display = 'inline-block';
-            console.log('Install button shown');
+            console.log('[NationOS PWA] Install button shown');
         }
         this.showInstallSection();
     }
@@ -60,7 +70,7 @@ class PWAInstallManager {
         const installSection = document.getElementById('pwa-install-section');
         if (installSection) {
             installSection.style.display = 'block';
-            console.log('Install section shown');
+            console.log('[NationOS PWA] Install section shown');
         }
     }
 
@@ -71,22 +81,22 @@ class PWAInstallManager {
         if (installBtn) installBtn.style.display = 'none';
         if (installSection) installSection.style.display = 'none';
         
-        console.log('Install UI hidden');
+        console.log('[NationOS PWA] Install UI hidden');
     }
 
     async installPWA() {
         if (this.deferredPrompt) {
-            console.log('Triggering install prompt');
+            console.log('[NationOS PWA] Triggering install prompt');
             this.deferredPrompt.prompt();
             
             const { outcome } = await this.deferredPrompt.userChoice;
-            console.log('User choice:', outcome);
+            console.log('[NationOS PWA] User choice:', outcome);
             
             if (outcome === 'accepted') {
-                console.log('User accepted PWA installation');
+                console.log('[NationOS PWA] User accepted installation');
                 this.hideInstallUI();
             } else {
-                console.log('User dismissed PWA installation');
+                console.log('[NationOS PWA] User dismissed installation');
             }
             
             this.deferredPrompt = null;
@@ -94,7 +104,7 @@ class PWAInstallManager {
             // For iOS, show manual instructions
             this.showManualInstructions();
         } else {
-            console.log('Install prompt not available');
+            console.log('[NationOS PWA] Install prompt not available');
             this.showManualInstructions();
         }
     }
@@ -103,7 +113,7 @@ class PWAInstallManager {
         const modal = document.getElementById('pwa-instructions-modal');
         if (modal) {
             modal.style.display = 'flex';
-            console.log('Manual instructions modal shown');
+            console.log('[NationOS PWA] Manual instructions modal shown');
         }
     }
 
@@ -111,7 +121,7 @@ class PWAInstallManager {
         const modal = document.getElementById('pwa-instructions-modal');
         if (modal) {
             modal.style.display = 'none';
-            console.log('Manual instructions modal closed');
+            console.log('[NationOS PWA] Manual instructions modal closed');
         }
     }
 
@@ -120,7 +130,7 @@ class PWAInstallManager {
         const installBtn = document.getElementById('pwa-install-btn');
         if (installBtn) {
             installBtn.addEventListener('click', () => {
-                console.log('Install button clicked');
+                console.log('[NationOS PWA] Install button clicked');
                 this.installPWA();
             });
         }
@@ -129,7 +139,7 @@ class PWAInstallManager {
         const manualBtn = document.getElementById('pwa-manual-btn');
         if (manualBtn) {
             manualBtn.addEventListener('click', () => {
-                console.log('Manual instructions button clicked');
+                console.log('[NationOS PWA] Manual instructions button clicked');
                 this.showManualInstructions();
             });
         }
@@ -138,7 +148,7 @@ class PWAInstallManager {
         const closeBtn = document.getElementById('pwa-close-btn');
         if (closeBtn) {
             closeBtn.addEventListener('click', () => {
-                console.log('Close button clicked');
+                console.log('[NationOS PWA] Close button clicked');
                 this.closeInstructions();
             });
         }
@@ -152,25 +162,69 @@ class PWAInstallManager {
                 }
             });
         }
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                this.closeInstructions();
+            }
+        });
     }
     
     registerServiceWorker() {
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/nationos-website/sw.js')
+            // Register service worker from root
+            navigator.serviceWorker.register('/sw.js')
                 .then((registration) => {
-                    console.log('Service Worker registered successfully:', registration.scope);
+                    console.log('[NationOS PWA] Service Worker registered:', registration.scope);
+                    
+                    // Check for updates
+                    registration.addEventListener('updatefound', () => {
+                        const newWorker = registration.installing;
+                        console.log('[NationOS PWA] Service Worker update found');
+                        
+                        newWorker.addEventListener('statechange', () => {
+                            if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                console.log('[NationOS PWA] New version available');
+                                // Could show update notification here
+                            }
+                        });
+                    });
                 })
                 .catch((error) => {
-                    console.log('Service Worker registration failed:', error);
+                    console.error('[NationOS PWA] Service Worker registration failed:', error);
                 });
         } else {
-            console.log('Service Worker not supported');
+            console.log('[NationOS PWA] Service Worker not supported');
         }
+    }
+
+    // Utility method to check PWA install criteria
+    checkInstallCriteria() {
+        const criteria = {
+            https: location.protocol === 'https:',
+            serviceWorker: 'serviceWorker' in navigator,
+            manifest: !!document.querySelector('link[rel="manifest"]'),
+            standalone: this.isStandalone
+        };
+        
+        console.log('[NationOS PWA] Install criteria:', criteria);
+        return criteria;
     }
 }
 
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('DOM loaded - initializing PWA Install Manager');
+    console.log('[NationOS PWA] DOM loaded - initializing');
     window.pwaInstallManager = new PWAInstallManager();
+    
+    // Log install criteria for debugging
+    setTimeout(() => {
+        window.pwaInstallManager.checkInstallCriteria();
+    }, 1000);
 });
+
+// Export for module usage
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = PWAInstallManager;
+}

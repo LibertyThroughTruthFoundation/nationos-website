@@ -432,13 +432,6 @@
     <!-- PWA Installation Script -->
     <script src="js/pwa-install.js"></script>
     
-    <!-- Service Worker Registration -->
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('sw.js')
-                .then(reg => console.log('Service Worker registered'))
-                .catch(err => console.log('Service Worker registration failed'));
-        }
-    </script>
+    <!-- Service Worker Registration handled by pwa-install.js -->
 </body>
 </html>
