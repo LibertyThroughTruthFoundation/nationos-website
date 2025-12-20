@@ -2,70 +2,65 @@
   "name": "NationOS - A Covenant Alternative to Digital Tyranny",
   "short_name": "NationOS",
   "description": "Building sovereign Christian communities on decentralized infrastructure under Christ's Lordship. The Operational Canon for Covenant Warfare in the Digital Age.",
-  "start_url": "/",
+  "start_url": "/index.html",
   "scope": "/",
-  "id": "/",
+  "id": "nationos-pwa",
   "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
   "theme_color": "#1a365d",
   "background_color": "#0f172a",
-  "orientation": "portrait-primary",
+  "orientation": "any",
   "icons": [
     {
-      "src": "/images/icon-72x72.png",
+      "src": "images/icon-72x72.png",
       "sizes": "72x72",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/images/icon-96x96.png",
+      "src": "images/icon-96x96.png",
       "sizes": "96x96",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/images/icon-128x128.png",
+      "src": "images/icon-128x128.png",
       "sizes": "128x128",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/images/icon-144x144.png",
+      "src": "images/icon-144x144.png",
       "sizes": "144x144",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/images/icon-152x152.png",
+      "src": "images/icon-152x152.png",
       "sizes": "152x152",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/images/icon-192x192.png",
+      "src": "images/icon-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/images/icon-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "maskable"
-    },
-    {
-      "src": "/images/icon-384x384.png",
+      "src": "images/icon-384x384.png",
       "sizes": "384x384",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/images/icon-512x512.png",
+      "src": "images/icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/images/icon-512x512.png",
+      "src": "images/icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
@@ -82,21 +77,24 @@
       "short_name": "Pillars",
       "description": "View the 12 Pillars of NationOS",
       "url": "/pillars.html",
-      "icons": [{ "src": "/images/icon-192x192.png", "sizes": "192x192" }]
+      "icons": [{ "src": "images/icon-192x192.png", "sizes": "192x192" }]
     },
     {
       "name": "Join the Covenant",
       "short_name": "Join",
       "description": "Join the NationOS community",
       "url": "/join.html",
-      "icons": [{ "src": "/images/icon-192x192.png", "sizes": "192x192" }]
+      "icons": [{ "src": "images/icon-192x192.png", "sizes": "192x192" }]
     },
     {
       "name": "Constitution",
       "short_name": "Constitution",
       "description": "Read the NationOS Constitution",
       "url": "/constitution.html",
-      "icons": [{ "src": "/images/icon-192x192.png", "sizes": "192x192" }]
+      "icons": [{ "src": "images/icon-192x192.png", "sizes": "192x192" }]
     }
-  ]
+  ],
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  }
 }
