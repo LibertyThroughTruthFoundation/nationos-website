@@ -3,435 +3,666 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="NationOS - A Covenant Alternative to Digital Tyranny. Building sovereign Christian communities on decentralized infrastructure.">
-    <meta name="keywords" content="NationOS, digital sovereignty, Christian community, blockchain, covenant, PulseChain">
-    <title>NationOS - A Covenant Alternative to Digital Tyranny</title>
-    
-    <!-- Fonts -->
+    <meta name="description" content="NationOS - A Covenant Operating System for Sovereign Living. Built on the 81-Book Ethiopian Canon, the Divine Council worldview, and the jurisdictional authority of the rightful King.">
+    <title>NationOS - Covenant Operating System for Sovereign Living</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    
-    <!-- Stylesheets -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&amp;family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/unified-design.css">
     <link rel="stylesheet" href="css/style.css">
-    
-    <!-- PWA -->
     <link rel="manifest" href="manifest.json">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/nationos_emblem_header.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/nationos_emblem_header_transparent.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-    <meta name="theme-color" content="#1a365d">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="NationOS">
+    <meta name="theme-color" content="#050505">
+    <style>
+        .hero-home {
+            background: linear-gradient(135deg, #0A1931 0%, #050505 50%, #0A1931 100%);
+            padding: 5rem 2rem;
+            text-align: center;
+            border-bottom: 2px solid var(--kingdom-gold);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-home::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at 50% 30%, rgba(212, 175, 55, 0.08) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .hero-home .emblem {
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 2rem;
+            filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.5));
+        }
+        .hero-home h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            letter-spacing: 0.15em;
+        }
+        .hero-home .subtitle {
+            font-size: 1.4rem;
+            color: var(--text-primary);
+            max-width: 800px;
+            margin: 0 auto 1.5rem;
+            line-height: 1.6;
+            font-family: 'Crimson Text', serif;
+        }
+        .hero-home .scripture {
+            font-style: italic;
+            color: #8a701e;
+            font-size: 1.15rem;
+            margin-bottom: 2.5rem;
+            font-family: 'Crimson Text', serif;
+        }
+        .hero-cta {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .section-intro {
+            max-width: 900px;
+            margin: 0 auto 3rem;
+            text-align: center;
+        }
+        .section-intro p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--text-primary);
+        }
+        .theology-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .theology-card {
+            background: var(--card-bg, #0a0a0a);
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+        .theology-card:hover {
+            border-color: var(--kingdom-gold);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(212, 175, 55, 0.2);
+        }
+        .theology-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .theology-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        .theology-card .ref {
+            display: block;
+            margin-top: 1rem;
+            font-style: italic;
+            color: #8a701e;
+            font-size: 0.95rem;
+        }
+        .phiat-section {
+            background: linear-gradient(135deg, #0A1931 0%, #050505 100%);
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        .phiat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .phiat-item {
+            text-align: center;
+            padding: 1.5rem;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 8px;
+            background: rgba(10, 10, 10, 0.5);
+        }
+        .phiat-item .letter {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            color: var(--kingdom-gold);
+            font-weight: 900;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        .phiat-item .domain {
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        .phiat-item .desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        .pillars-preview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .pillar-preview-card {
+            background: var(--card-bg, #0a0a0a);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .pillar-preview-card:hover {
+            border-color: var(--kingdom-gold);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(212, 175, 55, 0.15);
+        }
+        .pillar-preview-card .pillar-num {
+            font-family: 'Cinzel', serif;
+            font-size: 0.85rem;
+            color: #8a701e;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+        .pillar-preview-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+        .pillar-preview-card .archetype {
+            font-style: italic;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        .cbn-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .cbn-card {
+            background: var(--card-bg, #0a0a0a);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .cbn-card:hover {
+            border-color: var(--kingdom-gold);
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.15);
+        }
+        .cbn-card h4 { font-size: 1rem; margin-bottom: 0.5rem; }
+        .cbn-card .handle { color: var(--kingdom-gold); font-weight: 600; margin-bottom: 0.5rem; }
+        .cbn-card p { font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem; }
+        .support-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .support-card {
+            background: var(--card-bg, #0a0a0a);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+        }
+        .support-card h4 { margin-bottom: 0.75rem; }
+        .support-card p { font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem; }
+        .address-display {
+            background: rgba(0,0,0,0.5);
+            padding: 0.75rem;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.8rem;
+            word-break: break-all;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        .btn-small-copy {
+            background: #8a701e;
+            color: #fff;
+            border: none;
+            padding: 6px 14px;
+            cursor: pointer;
+            font-weight: 600;
+            border-radius: 4px;
+            font-family: 'Cinzel', serif;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            transition: all 0.3s ease;
+        }
+        .btn-small-copy:hover { background: var(--kingdom-gold); color: #000; }
+        @media (max-width: 768px) {
+            .hero-home h1 { font-size: 2.2rem; }
+            .hero-home .subtitle { font-size: 1.1rem; }
+            .hero-home { padding: 3rem 1.5rem; }
+            .hero-home .emblem { width: 100px; height: 100px; }
+        }
+    </style>
 </head>
 <body>
-    <!-- Header & Navigation - The Outer Gate -->
+    <!-- Header & Navigation -->
     <header>
-        <div class="header-content">
+        <nav class="container">
             <div class="logo">
-                <img src="images/nationos_logo_concept.png" alt="NationOS Covenant Emblem" style="height: 50px; width: auto;">
-                <span>NationOS</span>
+                <img src="images/nationos_emblem_header_transparent.png" alt="NationOS Covenant Emblem">
+                <span class="logo-text">NationOS</span>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="#table-of-contents">Library</a></li>
-                    <li><a href="pillars.html">12 Pillars</a></li>
-                    <li><a href="join.html">Join</a></li>
-                    <li><a href="#covenant-bureau">Connect</a></li>
-                </ul>
-            </nav>
-        </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="constitution.html">Constitution</a></li>
+                <li><a href="declaration.html">Declaration</a></li>
+                <li><a href="pillars.html">12 Pillars</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="join.html">Join</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- Hero Section - The Covenant Gateway -->
-    <section class="hero">
-        <div class="hero-content">
-            <img src="images/digital_ark_hero.png" alt="The Digital Ark" style="width: 100%; max-width: 800px; height: auto; margin: 0 auto 2rem; display: block; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); border: 1px solid var(--kingdom-gold);">
-            <h1>NationOS</h1>
-            <p class="hero-subtitle">A Covenant Alternative to Digital Tyranny</p>
-            <p style="font-size: 1.25rem; margin-bottom: 2rem; opacity: 0.95; max-width: 700px; margin-left: auto; margin-right: auto;">
-                Building sovereign Christian communities on decentralized infrastructure.<br>
-                Recovery of ancient sovereignty through modern tools, under Christ's Lordship.
-            </p>
-            <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
-                <a href="#start-here" class="btn">Start Here</a>
-                <a href="#table-of-contents" class="btn btn-secondary">Explore the Library</a>
+    <!-- HERO SECTION -->
+    <section class="hero-home">
+        <img src="images/nationos_emblem_header_transparent.png" alt="NationOS Emblem" class="emblem">
+        <h1>NationOS</h1>
+        <p class="subtitle">
+            A Covenant Operating System for Sovereign Living.<br>
+            Built on the 81-Book Canon. Governed by the Divine Council Worldview.<br>
+            Executed in the Little Season.
+        </p>
+        <p class="scripture">
+            "The meek shall inherit the earth." &mdash; Psalm 37:11 / Matthew 5:5
+        </p>
+        <div class="hero-cta">
+            <a href="pillars.html" class="btn btn-primary">Explore the 12 Pillars</a>
+            <a href="about.html" class="btn btn-secondary">Read the Vision</a>
+            <a href="join.html" class="btn btn-secondary">Enter the Covenant</a>
+        </div>
+    </section>
+
+    <!-- THE DIAGNOSIS: OCCUPIED TERRITORY -->
+    <section style="padding: 4rem 2rem;">
+        <div class="container">
+            <div class="section-intro">
+                <h2>The Diagnosis: Occupied Territory</h2>
+                <p>
+                    Most believers today are attempting to build sovereign households while running on a Babylonian operating system. They apply massive effort, sincere prayer, and genuine dedication&mdash;but the results are constantly compromised. The failure is not a lack of effort; it is a lack of <strong>alignment</strong>.
+                </p>
+                <p style="margin-top: 1rem;">
+                    You cannot achieve <em>de jure</em> Kingdom results while operating on <em>de facto</em> Babylonian assumptions.
+                </p>
+            </div>
+
+            <div class="theology-grid">
+                <div class="theology-card">
+                    <h3>The Truncated Canon</h3>
+                    <p>
+                        The 66-book Protestant canon is a redaction&mdash;a curated text based on the Masoretic tradition, edited by men who rejected the Messiah and suppressed the cosmic, supernatural elements of the faith. When you remove Enoch and Jubilees, you remove the legal precedent for understanding the Divine Council, the Nephilim incursion, and the jurisdictional warfare we face today.
+                    </p>
+                    <span class="ref">The 81-Book Ethiopian Orthodox Canon restores the complete cosmic legal code.</span>
+                </div>
+
+                <div class="theology-card">
+                    <h3>The Divine Council</h3>
+                    <p>
+                        The conflict is not merely human; it is cosmic. YHWH has taken His place in the divine council (Psalm 82:1). The earth is occupied territory, currently administered by rebellious <em>elohim</em> who have been judged but continue operating as squatters on an expired lease.
+                    </p>
+                    <span class="ref">"God stands in the congregation of the mighty; He judges among the gods." &mdash; Psalm 82:1</span>
+                </div>
+
+                <div class="theology-card">
+                    <h3>The Little Season</h3>
+                    <p>
+                        The Parousia occurred in AD 70, dismantling the Old Covenant system and establishing the New Jerusalem. We now operate in the Little Season (Revelation 20:3)&mdash;a period where the enemy has been loosed for a short time. The current globalist, fiat-driven system is not a rising empire; it is a <strong>Squatter's Regime</strong> operating on an expired lease.
+                    </p>
+                    <span class="ref">Our job is not to wait for rescue, but to demonstrate the governance of the rightful King.</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- START HERE Section - For Beginners -->
-    <section id="start-here" style="background: linear-gradient(135deg, #1a365d 0%, #0f172a 100%); padding: 4rem 1.5rem;">
-        <div class="section-header">
-            <h2>🎯 Start Here</h2>
-            <p style="font-size: 1.375rem; opacity: 0.95;">New to NationOS? Begin your journey here.</p>
+    <!-- THE PRESCRIPTION: PHIAT FRAMEWORK -->
+    <section class="phiat-section" style="padding: 4rem 2rem;">
+        <div class="container">
+            <div class="section-intro">
+                <h2>The Prescription: PHIAT</h2>
+                <p>
+                    Aligning with the unredacted Word is not behavior modification. It is a <strong>frequency change</strong>. When you align your stewardship domains with the jurisdictional authority of the full canon, you move from <em>Fiat</em>&mdash;the spiritual ignition of agreement with God&mdash;to <strong>PHIAT</strong>: the operational management of your allotted territory.
+                </p>
+            </div>
+
+            <div class="phiat-grid">
+                <div class="phiat-item">
+                    <span class="letter">P</span>
+                    <span class="domain">Property</span>
+                    <span class="desc">Land, shelter, physical domain under stewardship</span>
+                </div>
+                <div class="phiat-item">
+                    <span class="letter">H</span>
+                    <span class="domain">Health</span>
+                    <span class="desc">Body as Temple&mdash;undefiled by pharmakeia</span>
+                </div>
+                <div class="phiat-item">
+                    <span class="letter">I</span>
+                    <span class="domain">Income</span>
+                    <span class="desc">Productive capacity outside the Babylonian ledger</span>
+                </div>
+                <div class="phiat-item">
+                    <span class="letter">A</span>
+                    <span class="domain">Assets</span>
+                    <span class="desc">Stored value beyond the reach of fiat debasement</span>
+                </div>
+                <div class="phiat-item">
+                    <span class="letter">T</span>
+                    <span class="domain">Time</span>
+                    <span class="desc">The irreplaceable resource&mdash;redeemed from the system</span>
+                </div>
+            </div>
         </div>
-        
-        <div style="max-width: 1200px; margin: 0 auto;">
-            <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
-                <div class="card sacred-glow">
-                    <div style="font-size: 3rem; margin-bottom: 1rem;">📖</div>
-                    <h3>What is NationOS?</h3>
-                    <p>Learn about our vision for a covenant-based alternative to digital tyranny and how we're building sovereign Christian communities.</p>
-                    <a href="about.html" class="btn" style="margin-top: 1.5rem; display: inline-block;">Learn More</a>
+    </section>
+
+    <!-- THE 12 PILLARS PREVIEW -->
+    <section style="padding: 4rem 2rem;">
+        <div class="container">
+            <div class="section-intro">
+                <h2>The 12 Pillars of Sovereign Living</h2>
+                <p>
+                    NationOS provides complete infrastructure for covenant living&mdash;addressing every aspect of life under biblical principles. Each pillar is mapped to a scriptural archetype and a practical counter-institution that strips the <em>de facto</em> state of its ability to command allegiance.
+                </p>
+            </div>
+
+            <div class="pillars-preview">
+                <div class="pillar-preview-card">
+                    <div class="pillar-num">Pillar I</div>
+                    <h4>Covenantal Law</h4>
+                    <p class="archetype">The Early Church &mdash; Acts 2-4</p>
+                </div>
+                <div class="pillar-preview-card">
+                    <div class="pillar-num">Pillar II</div>
+                    <h4>Sovereign Identity</h4>
+                    <p class="archetype">Daniel in Babylon &mdash; Daniel 1</p>
+                </div>
+                <div class="pillar-preview-card">
+                    <div class="pillar-num">Pillar III</div>
+                    <h4>Defense &amp; Security</h4>
+                    <p class="archetype">Nehemiah &mdash; Nehemiah 4</p>
+                </div>
+                <div class="pillar-preview-card">
+                    <div class="pillar-num">Pillar IV</div>
+                    <h4>Covenant Finance</h4>
+                    <p class="archetype">Joseph in Egypt &mdash; Genesis 41</p>
+                </div>
+                <div class="pillar-preview-card">
+                    <div class="pillar-num">Pillar V</div>
+                    <h4>Property &amp; Tenure</h4>
+                    <p class="archetype">Jeremiah's Field &mdash; Jeremiah 32</p>
+                </div>
+                <div class="pillar-preview-card">
+                    <div class="pillar-num">Pillar VI</div>
+                    <h4>Energy Sovereignty</h4>
+                    <p class="archetype">The Wise Virgins &mdash; Matthew 25</p>
+                </div>
+                <div class="pillar-preview-card">
+                    <div class="pillar-num">Pillar VII</div>
+                    <h4>Education</h4>
+                    <p class="archetype">The Rechabites &mdash; Jeremiah 35</p>
+                </div>
+                <div class="pillar-preview-card">
+                    <div class="pillar-num">Pillar VIII</div>
+                    <h4>Health</h4>
+                    <p class="archetype">Anti-Nephilim Mandate &mdash; Genesis 6</p>
+                </div>
+                <div class="pillar-preview-card">
+                    <div class="pillar-num">Pillar IX</div>
+                    <h4>Family</h4>
+                    <p class="archetype">Abraham's Altar &mdash; Genesis 18</p>
+                </div>
+                <div class="pillar-preview-card">
+                    <div class="pillar-num">Pillar X</div>
+                    <h4>Food Sovereignty</h4>
+                    <p class="archetype">Elijah &amp; the Widow &mdash; 1 Kings 17</p>
+                </div>
+                <div class="pillar-preview-card">
+                    <div class="pillar-num">Pillar XI</div>
+                    <h4>Digital Infrastructure</h4>
+                    <p class="archetype">Noah's Ark &mdash; Genesis 6</p>
+                </div>
+                <div class="pillar-preview-card">
+                    <div class="pillar-num">Pillar XII</div>
+                    <h4>The Remnant Network</h4>
+                    <p class="archetype">Exiles of the Dispersion &mdash; 1 Peter 1</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 2.5rem;">
+                <a href="pillars.html" class="btn btn-primary">Read the Full 12 Pillars</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOUNDATIONAL DOCUMENTS -->
+    <section style="padding: 4rem 2rem; background: linear-gradient(135deg, #0A1931 0%, #050505 100%);">
+        <div class="container">
+            <div class="section-intro">
+                <h2>Foundational Documents</h2>
+                <p>
+                    NationOS is built on written covenant&mdash;not vague sentiment. These documents establish the constitutional, declaratory, and operational foundations of the parallel civilization.
+                </p>
+            </div>
+
+            <div class="theology-grid">
+                <div class="theology-card">
+                    <h3>The Constitution</h3>
+                    <p>
+                        The Sovereign Way Constitution establishes the immutable principles, governance structure, and covenant obligations that bind the NationOS community under Christ's Lordship.
+                    </p>
+                    <div style="margin-top: 1.5rem;">
+                        <a href="constitution.html" class="btn btn-secondary" style="font-size: 0.9rem;">Read the Constitution</a>
+                    </div>
                 </div>
 
-                <div class="card sacred-glow">
-                    <div style="font-size: 3rem; margin-bottom: 1rem;">⚖️</div>
-                    <h3>The Foundation</h3>
-                    <p>Read the Constitution and Declaration - the foundational documents establishing our covenant principles and digital sovereignty.</p>
-                    <a href="constitution.html" class="btn" style="margin-top: 1.5rem; display: inline-block;">Read Foundation</a>
+                <div class="theology-card">
+                    <h3>The Declaration</h3>
+                    <p>
+                        The Universal Declaration of Digital Sovereignty identifies six grievances against digital tyranny and proclaims the recovery paradigm&mdash;the "why" behind sovereign infrastructure.
+                    </p>
+                    <div style="margin-top: 1.5rem;">
+                        <a href="declaration.html" class="btn btn-secondary" style="font-size: 0.9rem;">Read the Declaration</a>
+                    </div>
                 </div>
 
-                <div class="card sacred-glow">
-                    <div style="font-size: 3rem; margin-bottom: 1rem;">🏛️</div>
+                <div class="theology-card">
                     <h3>The 12 Pillars</h3>
-                    <p>Explore our comprehensive framework covering every aspect of covenant living - from finance to worship.</p>
-                    <a href="pillars.html" class="btn" style="margin-top: 1.5rem; display: inline-block;">View Pillars</a>
-                </div>
-
-                <div class="card sacred-glow">
-                    <div style="font-size: 3rem; margin-bottom: 1rem;">🤝</div>
-                    <h3>Join the Community</h3>
-                    <p>Ready to become part of the covenant? Learn how to join our growing community of builders and believers.</p>
-                    <a href="join.html" class="btn" style="margin-top: 1.5rem; display: inline-block;">Join Us</a>
+                    <p>
+                        The complete alternative civilization architecture&mdash;twelve counter-institutions mapped to biblical archetypes that make the Squatter's Regime irrelevant to daily survival.
+                    </p>
+                    <div style="margin-top: 1.5rem;">
+                        <a href="pillars.html" class="btn btn-secondary" style="font-size: 0.9rem;">Read the 12 Pillars</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- TABLE OF CONTENTS Section - Thematic Organization -->
-    <section id="table-of-contents" style="background: var(--gradient-primary); padding: 4rem 1.5rem;">
-        <div class="section-header">
-            <img src="images/exodus_triptych.png" alt="The Exodus Journey" style="width: 100%; max-width: 1000px; margin: 0 auto 2rem; display: block; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.4);">
-            <h2>📚 The Covenant Library</h2>
-            <p style="font-size: 1.375rem; opacity: 0.95;">Explore our comprehensive collection of covenant resources, organized by theme.</p>
-        </div>
-        
-        <div style="max-width: 1400px; margin: 0 auto;">
-            <!-- THE COVENANT CANON -->
-            <div class="card sacred-glow" style="margin-bottom: 2.5rem;">
-                <h3 style="color: var(--kingdom-gold); font-size: 1.75rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--kingdom-gold); padding-bottom: 0.75rem;">
-                    📜 THE COVENANT CANON
-                </h3>
-                <p style="margin-bottom: 2rem; font-size: 1.125rem; opacity: 0.9;">
-                    The foundational documents establishing our theological framework and operational principles.
+    <!-- COVENANT BUREAU NETWORK -->
+    <section id="covenant-bureau" style="padding: 4rem 2rem;">
+        <div class="container">
+            <div class="section-intro">
+                <h2>The Covenant Bureau Network</h2>
+                <p>
+                    NationOS operates through a distributed network of voices, each serving a specific function in the mission. Connect with us across platforms.
                 </p>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
-                    <div>
-                        <h4 style="color: var(--kingdom-gold); margin-bottom: 0.5rem;">📖 The Sovereign Way Manual</h4>
-                        <p style="margin-bottom: 1rem; opacity: 0.85;">Complete framework for covenant living in the digital age under Christ's Lordship.</p>
-                        <a href="The_Sovereign_Way_Manual.pdf" class="btn btn-small" download>Download PDF</a>
-                    </div>
-                    <div>
-                        <h4 style="color: var(--kingdom-gold); margin-bottom: 0.5rem;">⚖️ The Constitution</h4>
-                        <p style="margin-bottom: 1rem; opacity: 0.85;">Foundational covenant document establishing NationOS governance principles.</p>
-                        <a href="NationOS_Constitution.pdf" class="btn btn-small" download>Download PDF</a>
-                    </div>
-                    <div>
-                        <h4 style="color: var(--kingdom-gold); margin-bottom: 0.5rem;">🗽 The Declaration</h4>
-                        <p style="margin-bottom: 1rem; opacity: 0.85;">Universal Declaration of Digital Sovereignty - our covenant proclamation of freedom.</p>
-                        <a href="Digital_Sovereignty_Declaration.pdf" class="btn btn-small" download>Download PDF</a>
-                    </div>
-                </div>
             </div>
 
-            <!-- COVENANT WARFARE MANUAL -->
-            <div class="card sacred-glow" style="margin-bottom: 2.5rem;">
-                <img src="images/beast_vs_covenant.png" alt="Beast System vs Covenant System" style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 1.5rem; border: 1px solid rgba(212, 175, 55, 0.3);">
-                <h3 style="color: var(--kingdom-gold); font-size: 1.75rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--kingdom-gold); padding-bottom: 0.75rem;">
-                    ⚔️ COVENANT WARFARE MANUAL
-                </h3>
-                <p style="margin-bottom: 2rem; font-size: 1.125rem; opacity: 0.9;">
-                    Strategic frameworks for spiritual warfare, discernment, and covenant engagement.
+            <div class="cbn-grid">
+                <div class="cbn-card">
+                    <h4>The Founder</h4>
+                    <p class="handle">@BryanPavlovicX</p>
+                    <p>Personal journey, faith, family, and testimony.</p>
+                    <div style="display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap;">
+                        <a href="https://x.com/BryanPavlovicX" target="_blank" class="btn btn-secondary" style="font-size: 0.8rem; padding: 0.5rem 1rem;">X</a>
+                        <a href="https://gab.com/BryanPavlovic" target="_blank" class="btn btn-secondary" style="font-size: 0.8rem; padding: 0.5rem 1rem;">Gab</a>
+                    </div>
+                </div>
+                <div class="cbn-card">
+                    <h4>The Architect</h4>
+                    <p class="handle">@SovereignSent</p>
+                    <p>Technical content, sovereign stack builds, and infrastructure.</p>
+                    <a href="https://x.com/SovereignSent" target="_blank" class="btn btn-secondary" style="font-size: 0.8rem; padding: 0.5rem 1rem;">Follow on X</a>
+                </div>
+                <div class="cbn-card">
+                    <h4>The Foundation</h4>
+                    <p class="handle">@LTTFoundation</p>
+                    <p>Official announcements from Liberty Through Truth Foundation.</p>
+                    <div style="display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap;">
+                        <a href="https://x.com/LTTFoundation" target="_blank" class="btn btn-secondary" style="font-size: 0.8rem; padding: 0.5rem 1rem;">X</a>
+                        <a href="https://gab.com/LibertyThroughTruth" target="_blank" class="btn btn-secondary" style="font-size: 0.8rem; padding: 0.5rem 1rem;">Gab</a>
+                    </div>
+                </div>
+                <div class="cbn-card">
+                    <h4>The Product</h4>
+                    <p class="handle">@TheNationOS</p>
+                    <p>Platform updates, roadmap, and development progress.</p>
+                    <a href="https://x.com/TheNationOS" target="_blank" class="btn btn-secondary" style="font-size: 0.8rem; padding: 0.5rem 1rem;">Follow on X</a>
+                </div>
+                <div class="cbn-card">
+                    <h4>The Economy</h4>
+                    <p class="handle">@GodManMarkets</p>
+                    <p>Covenant marketplace, PulseChain integration, and economic tools.</p>
+                    <a href="https://x.com/GodManMarkets" target="_blank" class="btn btn-secondary" style="font-size: 0.8rem; padding: 0.5rem 1rem;">Follow on X</a>
+                </div>
+                <div class="cbn-card" style="opacity: 0.6; border-style: dashed;">
+                    <h4>AI Stewards</h4>
+                    <p class="handle">@TheologyAI &amp; @GovernanceAI</p>
+                    <p>Coming Soon: AI assistants for theological and governance guidance.</p>
+                    <span style="font-size: 0.8rem; color: var(--text-secondary);">In Development</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SUPPORT WITH SOVEREIGN MONEY -->
+    <section style="padding: 4rem 2rem; background: linear-gradient(135deg, #0A1931 0%, #050505 100%); border-top: 1px solid rgba(212, 175, 55, 0.3);">
+        <div class="container">
+            <div class="section-intro">
+                <h2>Support Sovereignty with Sovereign Money</h2>
+                <p>
+                    We build outside the system. Your provision fuels the Exodus.<br>
+                    <em style="color: #8a701e;">Accepting PLS, PLSX, INC, HEX, pDAI, pWBTC, and all pStables. Tax-efficient. Babylon-proof.</em>
                 </p>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
-                    <div>
-                        <h4 style="color: var(--kingdom-gold); margin-bottom: 0.5rem;">🎯 Reference Architecture Framework</h4>
-                        <p style="margin-bottom: 1rem; opacity: 0.85;">Complete architectural blueprint for covenant systems and spiritual warfare protocols.</p>
-                        <a href="REFERENCE_ARCHITECTURE_FRAMEWORK.md" class="btn btn-small">Read Framework</a>
-                    </div>
-                    <div>
-                        <h4 style="color: var(--kingdom-gold); margin-bottom: 0.5rem;">🛡️ Divine Council Theology</h4>
-                        <p style="margin-bottom: 1rem; opacity: 0.85;">Understanding the cosmic war and our role in Yahweh's loyalist host.</p>
-                        <a href="docs/SANCTUARY_PROTOCOL.md" class="btn btn-small">Read Protocol</a>
-                    </div>
-                    <div>
-                        <h4 style="color: var(--kingdom-gold); margin-bottom: 0.5rem;">📡 Redemptive Intelligence</h4>
-                        <p style="margin-bottom: 1rem; opacity: 0.85;">How past experiences become strategic assets for kingdom advancement.</p>
-                        <a href="docs/" class="btn btn-small">Explore Docs</a>
-                    </div>
-                </div>
             </div>
 
-            <!-- SOVEREIGNTY STACK -->
-            <div class="card sacred-glow" style="margin-bottom: 2.5rem;">
-                <h3 style="color: var(--kingdom-gold); font-size: 1.75rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--kingdom-gold); padding-bottom: 0.75rem;">
-                    🏗️ SOVEREIGNTY STACK
-                </h3>
-                <p style="margin-bottom: 2rem; font-size: 1.125rem; opacity: 0.9;">
-                    Technical infrastructure, blockchain integration, and digital sovereignty tools.
+            <div class="support-grid">
+                <div class="support-card">
+                    <h4>Liberty Through Truth Foundation</h4>
+                    <p>Book/manuscript donations, educational content, and Foundation legal work.</p>
+                    <div class="address-display">0xb338168ed4eda6d1592a6cee278cce4f6e1ae29c</div>
+                    <button onclick="navigator.clipboard.writeText('0xb338168ed4eda6d1592a6cee278cce4f6e1ae29c')" class="btn-small-copy">Copy Address</button>
+                </div>
+                <div class="support-card">
+                    <h4>GodManMarkets</h4>
+                    <p>Covenant marketplace development and economic infrastructure.</p>
+                    <div class="address-display">0xb338168ed4eda6d1592a6cee278cce4f6e1ae29c</div>
+                    <button onclick="navigator.clipboard.writeText('0xb338168ed4eda6d1592a6cee278cce4f6e1ae29c')" class="btn-small-copy">Copy Address</button>
+                </div>
+                <div class="support-card">
+                    <h4>NationOS Platform</h4>
+                    <p>Platform development, infrastructure, and operational support.</p>
+                    <div class="address-display">0xe5b1ba172caa71a0d47997527524c4dbefeacf5a</div>
+                    <button onclick="navigator.clipboard.writeText('0xe5b1ba172caa71a0d47997527524c4dbefeacf5a')" class="btn-small-copy">Copy Address</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section style="padding: 4rem 2rem; text-align: center;">
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto;">
+                <h2>The Wall Is Going Up. Come Build.</h2>
+                <p style="font-size: 1.2rem; color: var(--text-primary); margin-bottom: 1rem; line-height: 1.8;">
+                    We are demonstrating that the <em>de facto</em> state is a phantom institution that only has power if you agree to participate in its ledger. We are building the <strong>Real</strong> to replace the <strong>Simulacrum</strong>.
                 </p>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
-                    <div>
-                        <h4 style="color: var(--kingdom-gold); margin-bottom: 0.5rem;">⛓️ PulseChain Integration</h4>
-                        <p style="margin-bottom: 1rem; opacity: 0.85;">How we're building covenant economics on decentralized blockchain infrastructure.</p>
-                        <a href="pwbtc-integration-strategy.md" class="btn btn-small">Read Strategy</a>
-                    </div>
-                    <div>
-                        <h4 style="color: var(--kingdom-gold); margin-bottom: 0.5rem;">🏛️ The 12 Pillars</h4>
-                        <p style="margin-bottom: 1rem; opacity: 0.85;">Complete ecosystem covering finance, governance, identity, justice, and more.</p>
-                        <a href="pillars.html" class="btn btn-small">View All Pillars</a>
-                    </div>
-                    <div>
-                        <h4 style="color: var(--kingdom-gold); margin-bottom: 0.5rem;">🔐 Digital Stewardship</h4>
-                        <p style="margin-bottom: 1rem; opacity: 0.85;">Zero-trust architecture and sovereign identity protocols for covenant members.</p>
-                        <a href="resources.html" class="btn btn-small">View Resources</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- BUILDER'S GUIDE -->
-            <div class="card sacred-glow">
-                <h3 style="color: var(--kingdom-gold); font-size: 1.75rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--kingdom-gold); padding-bottom: 0.75rem;">
-                    🔨 BUILDER'S GUIDE
-                </h3>
-                <p style="margin-bottom: 2rem; font-size: 1.125rem; opacity: 0.9;">
-                    Practical resources for contributors, developers, and covenant community builders.
-                </p>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
-                    <div>
-                        <h4 style="color: var(--kingdom-gold); margin-bottom: 0.5rem;">🚀 Getting Started</h4>
-                        <p style="margin-bottom: 1rem; opacity: 0.85;">How to begin contributing to NationOS development and community building.</p>
-                        <a href="join.html" class="btn btn-small">Join the Build</a>
-                    </div>
-                    <div>
-                        <h4 style="color: var(--kingdom-gold); margin-bottom: 0.5rem;">📋 Battle Plans & Checklists</h4>
-                        <p style="margin-bottom: 1rem; opacity: 0.85;">Tactical execution guides and daily action plans for builders.</p>
-                        <a href="48-hour-execution-checklist.md" class="btn btn-small">View Plans</a>
-                    </div>
-                    <div>
-                        <h4 style="color: var(--kingdom-gold); margin-bottom: 0.5rem;">🤝 Community Protocols</h4>
-                        <p style="margin-bottom: 1rem; opacity: 0.85;">Guidelines for covenant fellowship, collaboration, and mutual support.</p>
-                        <a href="THE_INKLINGS_MODEL.md" class="btn btn-small">Read Model</a>
-                    </div>
+                <blockquote style="border-left: 4px solid var(--kingdom-gold); padding-left: 1.5rem; margin: 2rem auto; max-width: 600px; text-align: left;">
+                    <p style="font-style: italic; color: var(--text-primary); font-size: 1.1rem;">
+                        "Unless the LORD builds the house, those who build it labor in vain. Unless the LORD watches over the city, the watchman stays awake in vain."
+                    </p>
+                    <p style="color: #8a701e; margin-top: 0.5rem;">&mdash; Psalm 127:1</p>
+                </blockquote>
+                <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
+                    <a href="join.html" class="btn btn-primary">Enter the Covenant</a>
+                    <a href="constitution.html" class="btn btn-secondary">Read the Constitution</a>
+                    <a href="https://github.com/LibertyThroughTruthFoundation" target="_blank" class="btn btn-secondary">View on GitHub</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- COVENANT BUREAU NETWORK Section -->
-    <section id="covenant-bureau" style="background: linear-gradient(135deg, #0f172a 0%, #1a365d 100%); padding: 4rem 1.5rem;">
-        <div class="section-header">
-            <h2>🌐 The Covenant Bureau Network</h2>
-            <p style="font-size: 1.375rem; opacity: 0.95;">Connect with us across multiple platforms. Each handle serves a specific purpose in our mission.</p>
-        </div>
-        
-        <div style="max-width: 1400px; margin: 0 auto;">
-            <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
-                <!-- Personal/Founder -->
-                <div class="card sacred-glow">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">👑</div>
-                    <h3>The Founder</h3>
-                    <p style="margin-bottom: 1.5rem;"><strong>@BryanPavlovicX</strong></p>
-                    <p style="opacity: 0.85; margin-bottom: 1.5rem;">Personal journey, faith, family, and testimony from the founder of NationOS.</p>
-                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                        <a href="https://x.com/BryanPavlovicX" target="_blank" class="btn btn-small">Follow on X</a>
-                        <a href="https://gab.com/BryanPavlovic" target="_blank" class="btn btn-small">Follow on Gab</a>
-                    </div>
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>NationOS</h4>
+                    <p>A Covenant Operating System for Sovereign Living</p>
+                    <p style="margin-top: var(--spacing-sm); font-style: italic; color: var(--text-secondary);">
+                        Built on the 81-Book Canon. Governed by the Divine Council Worldview. Executed in the Little Season.
+                    </p>
                 </div>
-
-                <!-- Technical/Builder -->
-                <div class="card sacred-glow">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🏗️</div>
-                    <h3>The Architect</h3>
-                    <p style="margin-bottom: 1.5rem;"><strong>@SovereignSent</strong> ✅</p>
-                    <p style="opacity: 0.85; margin-bottom: 1.5rem;">Technical content, Sovereign Stack builds, and architectural insights for builders.</p>
-                    <a href="https://x.com/SovereignSent" target="_blank" class="btn btn-small">Follow on X</a>
-                </div>
-
-                <!-- Organization -->
-                <div class="card sacred-glow">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🏛️</div>
-                    <h3>The Foundation</h3>
-                    <p style="margin-bottom: 1.5rem;"><strong>@LTTFoundation</strong></p>
-                    <p style="opacity: 0.85; margin-bottom: 1.5rem;">Official announcements from Liberty Through Truth Foundation.</p>
-                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                        <a href="https://x.com/LTTFoundation" target="_blank" class="btn btn-small">Follow on X</a>
-                        <a href="https://gab.com/LibertyThroughTruth" target="_blank" class="btn btn-small">Follow on Gab</a>
-                    </div>
-                </div>
-
-                <!-- Product -->
-                <div class="card sacred-glow">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">⚙️</div>
-                    <h3>The Product</h3>
-                    <p style="margin-bottom: 1.5rem;"><strong>@TheNationOS</strong></p>
-                    <p style="opacity: 0.85; margin-bottom: 1.5rem;">Product updates, roadmap, and development progress for NationOS platform.</p>
-                    <a href="https://x.com/TheNationOS" target="_blank" class="btn btn-small">Follow on X</a>
-                </div>
-
-                <!-- Economic Engine -->
-                <div class="card sacred-glow">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">💼</div>
-                    <h3>The Economy</h3>
-                    <p style="margin-bottom: 1.5rem;"><strong>@GodManMarkets</strong> ✅</p>
-                    <p style="opacity: 0.85; margin-bottom: 1.5rem;">Covenant marketplace, services, PulseChain integration, and economic tools.</p>
-                    <a href="https://x.com/GodManMarkets" target="_blank" class="btn btn-small">Follow on X</a>
-                </div>
-
-                <!-- Coming Soon: AI Stewards -->
-                <div class="card sacred-glow" style="opacity: 0.7; border: 2px dashed var(--kingdom-gold);">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🤖</div>
-                    <h3>AI Stewards</h3>
-                    <p style="margin-bottom: 1.5rem;"><strong>@TheologyAI & @GovernanceAI</strong></p>
-                    <p style="opacity: 0.85; margin-bottom: 1.5rem;">Coming Soon: AI assistants for theological questions and governance guidance.</p>
-                    <span class="btn btn-small" style="opacity: 0.5; cursor: not-allowed;">Coming Soon</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Support Section -->
-    <section style="background: var(--gradient-primary); padding: 4rem 1.5rem;">
-        <div class="section-header">
-            <h2>⚔️ Support Sovereignty with Sovereign Money ⚔️</h2>
-            <p style="font-size: 1.25rem; opacity: 0.95;">We build outside the system. Your provision fuels the Exodus.</p>
-        </div>
-        
-        <div style="max-width: 900px; margin: 0 auto; text-align: center; margin-bottom: 3rem;">
-            <p style="font-size: 1.125rem; opacity: 0.9; margin-bottom: 1rem;">
-                <em>Accepting PLS, PLSX, INC, HEX, pDAI, pWBTC, and all pStables. Tax-efficient. Babylon-proof.</em>
-            </p>
-        </div>
-
-        <div class="card-grid" style="max-width: 1200px; margin: 0 auto; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
-            <div class="card sacred-glow">
-                <h3 style="color: var(--kingdom-gold);">📜 Liberty Through Truth Foundation</h3>
-                <p style="margin-bottom: 1.5rem;">For book/manuscript donations and support. Also supports educational content and Foundation legal work. (Parent owner of GodManMarkets)</p>
-                <div style="background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px; margin-bottom: 1rem; word-break: break-all; font-family: monospace; font-size: 0.9rem;">
-                    0xb338168ed4eda6d1592a6cee278cce4f6e1ae29c
-                </div>
-                <button onclick="navigator.clipboard.writeText('0xb338168ed4eda6d1592a6cee278cce4f6e1ae29c')" class="btn btn-small">COPY ADDRESS</button>
-            </div>
-
-            <div class="card sacred-glow">
-                <h3 style="color: var(--kingdom-gold);">⚖️ GodManMarkets</h3>
-                <p style="margin-bottom: 1.5rem;">For covenant marketplace development and resources that support the vision. (Same address as LTTF parent owner)</p>
-                <div style="background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px; margin-bottom: 1rem; word-break: break-all; font-family: monospace; font-size: 0.9rem;">
-                    0xb338168ed4eda6d1592a6cee278cce4f6e1ae29c
-                </div>
-                <button onclick="navigator.clipboard.writeText('0xb338168ed4eda6d1592a6cee278cce4f6e1ae29c')" class="btn btn-small">COPY ADDRESS</button>
-            </div>
-
-            <div class="card sacred-glow">
-                <h3 style="color: var(--kingdom-gold);">🏗️ NationOS</h3>
-                <p style="margin-bottom: 1.5rem;">For platform development, infrastructure, and operational support of the NationOS ecosystem.</p>
-                <div style="background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px; margin-bottom: 1rem; word-break: break-all; font-family: monospace; font-size: 0.9rem;">
-                    0xe5b1ba172caa71a0d47997527524c4dbefeacf5a
-                </div>
-                <button onclick="navigator.clipboard.writeText('0xe5b1ba172caa71a0d47997527524c4dbefeacf5a')" class="btn btn-small">COPY ADDRESS</button>
-            </div>
-        </div>
-
-        <div style="max-width: 700px; margin: 2rem auto 0; text-align: center;">
-            <p style="font-size: 1.125rem; opacity: 0.9;">
-                <strong>Supporting the book?</strong> Use the LTTF address.<br>
-                <strong>Supporting marketplace development?</strong> Use GodManMarkets.<br>
-                <strong>Supporting platform infrastructure?</strong> Use NationOS.<br>
-                All three fuel the covenant vision.
-            </p>
-        </div>
-    </section>
-
-    <!-- PWA Installation Section -->
-    <section style="background: linear-gradient(135deg, #1a365d 0%, #0f172a 100%); padding: 4rem 1.5rem;">
-        <div class="section-header">
-            <h2>📱 Install Sovereign Architecture</h2>
-            <p style="font-size: 1.25rem; opacity: 0.95;">Access NationOS offline. Install as an app on any device.</p>
-        </div>
-        
-        <div style="max-width: 600px; margin: 0 auto; text-align: center;">
-            <div id="pwa-install-section" style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
-                <button id="install-button" class="btn" style="display: none;">
-                    ⚡ Install App
-                </button>
-                <button id="install-instructions-button" class="btn btn-secondary">
-                    📖 Show Instructions
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer style="background: #0a0f1a; padding: 3rem 1.5rem; border-top: 2px solid var(--kingdom-gold);">
-        <div style="max-width: 1200px; margin: 0 auto;">
-            <!-- Footer Grid -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem; text-align: left;">
                 
-                <!-- Quick Links -->
-                <div>
-                    <h4 style="color: var(--kingdom-gold); margin-bottom: 1rem; font-size: 1.125rem;">Quick Links</h4>
-                    <ul style="list-style: none; padding: 0; opacity: 0.85;">
-                        <li style="margin-bottom: 0.5rem;"><a href="https://github.com/LibertyThroughTruthFoundation/nationos-website" target="_blank" style="color: var(--kingdom-gold); text-decoration: none; font-weight: bold;">🏛️ The Ark (GitHub)</a></li>
-                        <li style="margin-bottom: 0.5rem;"><a href="about.html" style="color: inherit; text-decoration: none;">About</a></li>
-                        <li style="margin-bottom: 0.5rem;"><a href="constitution.html" style="color: inherit; text-decoration: none;">Constitution</a></li>
-                        <li style="margin-bottom: 0.5rem;"><a href="declaration.html" style="color: inherit; text-decoration: none;">Declaration</a></li>
-                        <li style="margin-bottom: 0.5rem;"><a href="pillars.html" style="color: inherit; text-decoration: none;">12 Pillars</a></li>
-                        <li style="margin-bottom: 0.5rem;"><a href="join.html" style="color: inherit; text-decoration: none;">Join the Covenant</a></li>
+                <div class="footer-section">
+                    <h4>Documents</h4>
+                    <ul>
+                        <li><a href="constitution.html">Constitution</a></li>
+                        <li><a href="declaration.html">Declaration</a></li>
+                        <li><a href="pillars.html">12 Pillars</a></li>
+                        <li><a href="about.html">About</a></li>
                     </ul>
                 </div>
-
-                <!-- Covenant Bureau Network -->
-                <div>
-                    <h4 style="color: var(--kingdom-gold); margin-bottom: 1rem; font-size: 1.125rem;">🌐 Covenant Bureau Network</h4>
-                    <p style="opacity: 0.85; font-size: 0.9rem; margin-bottom: 1rem;">Connect with us across all platforms:</p>
-                    <ul style="list-style: none; padding: 0; opacity: 0.85; font-size: 0.9rem;">
-                        <li style="margin-bottom: 0.5rem;"><a href="https://x.com/LTTFoundation" target="_blank" style="color: inherit; text-decoration: none;">🏛️ Foundation (@LTTFoundation)</a></li>
-                        <li style="margin-bottom: 0.5rem;"><a href="https://x.com/BryanPavlovicX" target="_blank" style="color: inherit; text-decoration: none;">👑 Founder (@BryanPavlovicX)</a></li>
-                        <li style="margin-bottom: 0.5rem;"><a href="https://x.com/SovereignSent" target="_blank" style="color: inherit; text-decoration: none;">🏗️ Builder (@SovereignSent)</a></li>
-                        <li style="margin-bottom: 0.5rem;"><a href="https://x.com/GodManMarkets" target="_blank" style="color: inherit; text-decoration: none;">⚖️ Economy (@GodManMarkets)</a></li>
-                        <li style="margin-bottom: 0.5rem;"><a href="https://x.com/TheNationOS" target="_blank" style="color: inherit; text-decoration: none;">🛡️ Platform (@TheNationOS)</a></li>
+                
+                <div class="footer-section">
+                    <h4>Get Involved</h4>
+                    <ul>
+                        <li><a href="join.html">Enter the Covenant</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="https://github.com/LibertyThroughTruthFoundation" target="_blank">GitHub</a></li>
                     </ul>
-                    <p style="margin-top: 1rem; font-size: 0.85rem; opacity: 0.7;"><a href="#covenant-bureau" style="color: var(--kingdom-gold); text-decoration: none;">→ View Full Network Details</a></p>
                 </div>
-
-                <!-- For Advanced Builders -->
-                <div>
-                    <h4 style="color: var(--kingdom-gold); margin-bottom: 1rem; font-size: 1.125rem;">⚔️ For Advanced Builders</h4>
-                    <p style="opacity: 0.85; font-size: 0.9rem; margin-bottom: 1rem;">Deep research, technical docs, and the Third Canon ARK:</p>
-                    <ul style="list-style: none; padding: 0; opacity: 0.85; font-size: 0.9rem;">
-                        <li style="margin-bottom: 0.5rem;"><a href="https://github.com/LibertyThroughTruthFoundation" target="_blank" style="color: inherit; text-decoration: none;">📚 GitHub Repository</a></li>
-                        <li style="margin-bottom: 0.5rem;"><a href="resources.html" style="color: inherit; text-decoration: none;">🔧 Builder Resources</a></li>
-                        <li style="margin-bottom: 0.5rem;"><a href="#covenant-bureau" style="color: inherit; text-decoration: none;">🌐 Full Covenant Bureau</a></li>
+                
+                <div class="footer-section">
+                    <h4>Covenant Bureau</h4>
+                    <ul>
+                        <li><a href="https://x.com/LTTFoundation" target="_blank">@LTTFoundation</a></li>
+                        <li><a href="https://x.com/BryanPavlovicX" target="_blank">@BryanPavlovicX</a></li>
+                        <li><a href="https://x.com/SovereignSent" target="_blank">@SovereignSent</a></li>
+                        <li><a href="https://x.com/GodManMarkets" target="_blank">@GodManMarkets</a></li>
+                        <li><a href="https://x.com/TheNationOS" target="_blank">@TheNationOS</a></li>
                     </ul>
-                    <p style="margin-top: 1rem; font-size: 0.85rem; opacity: 0.7; font-style: italic;">"Unless the LORD builds the house..."</p>
                 </div>
             </div>
-
-            <!-- Bottom Bar -->
-            <div style="border-top: 1px solid rgba(212, 175, 55, 0.2); padding-top: 2rem; text-align: center;">
-                <p style="font-size: 1.125rem; margin-bottom: 0.5rem; color: var(--kingdom-gold); font-weight: 600;">
-                    NationOS - A Covenant Alternative to Digital Tyranny
-                </p>
-                <p style="opacity: 0.7; margin-bottom: 1rem; font-size: 0.95rem;">
-                    Building sovereign Christian communities under Christ's Lordship.
-                </p>
-                <p style="opacity: 0.5; font-size: 0.85rem;">
-                    © 2025 Liberty Through Truth Foundation. All rights reserved.<br>
-                    <em>Soli Deo Gloria</em> 🕊️
-                </p>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 NationOS | Liberty Through Truth Foundation | Under Christ's Lordship</p>
+                <p style="margin-top: var(--spacing-xs); font-style: italic;">"Unless the LORD builds the house, those who build it labor in vain." &mdash; Psalm 127:1</p>
             </div>
         </div>
     </footer>
 
     <!-- PWA Installation Script -->
     <script src="js/pwa-install.js"></script>
-    
-    <!-- Service Worker Registration handled by pwa-install.js -->
 </body>
 </html>

@@ -3,23 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="The 12 Pillars of NationOS - Complete alternative civilization architecture">
+    <meta name="description" content="The 12 Pillars of NationOS - Complete alternative civilization architecture mapped to biblical archetypes and practical counter-institutions.">
     <title>The 12 Pillars - NationOS</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&amp;family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/unified-design.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="images/nationos_emblem_header_transparent.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
     <style>
-        .document-content h1 { font-size: 2.5rem; }
-        .document-content h2 { font-size: 2rem; border-bottom: 2px solid var(--accent-gold); padding-bottom: var(--spacing-xs); margin-top: var(--spacing-lg); }
-        .document-content h3 { font-size: 1.5rem; color: var(--accent-bronze); }
-        .document-content h4 { font-size: 1.25rem; }
-        .document-content strong { color: var(--accent-gold); }
-        .document-content em { color: var(--text-primary); font-style: italic; }
-        .document-content code { background-color: var(--secondary-bg); padding: 2px 6px; border-radius: 4px; }
-        .document-content hr { border: none; border-top: 1px solid var(--border-color); margin: var(--spacing-md) 0; }
+        .pillar-full {
+            max-width: 1000px;
+            margin: 0 auto 3rem;
+            background: var(--card-bg, #0a0a0a);
+            border: 2px solid rgba(212, 175, 55, 0.25);
+            border-radius: 12px;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .pillar-full:hover {
+            border-color: var(--kingdom-gold);
+            box-shadow: 0 8px 24px rgba(212, 175, 55, 0.15);
+        }
+        .pillar-header {
+            display: flex;
+            align-items: baseline;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        .pillar-number {
+            font-family: 'Cinzel', serif;
+            font-size: 0.85rem;
+            color: #8a701e;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            white-space: nowrap;
+        }
+        .pillar-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.6rem;
+            color: var(--kingdom-gold);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0;
+        }
+        .pillar-subtitle {
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            color: #8a701e;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+        .pillar-body h4 {
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            color: var(--kingdom-gold);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .pillar-body p {
+            color: var(--text-secondary, #a0a0a0);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        .pillar-body .scripture-ref {
+            font-style: italic;
+            color: #8a701e;
+            border-left: 3px solid rgba(212, 175, 55, 0.3);
+            padding-left: 1rem;
+            margin: 1rem 0;
+            display: block;
+        }
+        .sphere-header {
+            text-align: center;
+            max-width: 1000px;
+            margin: 3rem auto 2rem;
+            padding: 1rem 0;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+        }
+        .sphere-header h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.4rem;
+            color: var(--kingdom-gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .section-intro {
+            max-width: 900px;
+            margin: 0 auto 3rem;
+            text-align: center;
+        }
+        .section-intro p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--text-primary);
+        }
+        @media (max-width: 768px) {
+            .pillar-full { padding: 1.5rem; }
+            .pillar-header { flex-direction: column; gap: 0.25rem; }
+            .pillar-title { font-size: 1.3rem; }
+        }
     </style>
 </head>
 <body>
@@ -36,9 +126,8 @@
                 <li><a href="constitution.html">Constitution</a></li>
                 <li><a href="declaration.html">Declaration</a></li>
                 <li><a href="pillars.html" class="active">12 Pillars</a></li>
-                <li><a href="education.html">Education</a></li>
-                <li><a href="join.html">Join</a></li>
                 <li><a href="resources.html">Resources</a></li>
+                <li><a href="join.html">Join</a></li>
             </ul>
         </nav>
     </header>
@@ -47,65 +136,254 @@
     <section class="hero" style="padding: var(--spacing-lg) 0;">
         <div class="container">
             <h1>The 12 Pillars of NationOS</h1>
-            <p>Complete Alternative Civilization Architecture</p>
+            <p>Parallel Infrastructure &amp; Scriptural Storyboard</p>
         </div>
     </section>
 
-    <!-- Overview Section -->
-    <section style="padding: var(--spacing-md) 0; background-color: var(--secondary-bg);">
+    <!-- Introduction -->
+    <section style="padding: 3rem 2rem;">
         <div class="container">
-            <div class="card">
-                <h3>A Comprehensive Ecosystem</h3>
+            <div class="section-intro">
                 <p>
-                    The 12 Pillars provide complete infrastructure for covenant living - addressing every aspect of life under biblical principles. 
-                    This is not just financial sovereignty; this is <strong>life sovereignty</strong>.
+                    To build a parallel society, the Remnant must move beyond the "financial-only" trap. Most in the crypto-space stop at the ledger; <strong>NationOS</strong> must conquer the <em>polis</em>.
                 </p>
-                <p style="margin-top: var(--spacing-sm);">
-                    Each pillar answers specific grievances from the Universal Declaration of Digital Sovereignty, 
-                    providing practical solutions that transform declaration into reality.
-                </p>
-                <p style="margin-top: var(--spacing-sm); text-align: center;">
-                    <a href="documents/NationOS_12_Pillars_IMPLEMENTATION_GUIDE_v1.0.md" download class="btn btn-primary">
-                        Download Full Implementation Guide (Markdown)
-                    </a>
+                <p style="margin-top: 1rem;">
+                    The parallel infrastructure is a set of counter-institutions that strip the <em>de facto</em> state of its ability to command allegiance. If you cannot stop them from ruling, you must simply make their rulings irrelevant to your daily survival. When someone asks, "What is NationOS?" you do not just show them a website or a token; you show them a <strong>functioning life</strong>.
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- Pillars Content -->
-    <section>
+    <!-- SPHERE I: GOVERNANCE & JURISDICTIONAL -->
+    <section style="padding: 0 2rem 3rem;">
         <div class="container">
-            <div class="document-content" id="pillars-content">
-                <!-- Content will be loaded from converted HTML -->
-                <script>
-                    fetch('documents/pillars_content.html')
-                        .then(response => response.text())
-                        .then(html => {
-                            document.getElementById('pillars-content').innerHTML = html;
-                        })
-                        .catch(error => {
-                            console.error('Error loading pillars:', error);
-                            document.getElementById('pillars-content').innerHTML = 
-                                '<p>Error loading pillars content. Please <a href="documents/NationOS_12_Pillars_IMPLEMENTATION_GUIDE_v1.0.md" download>download the full document</a>.</p>';
-                        });
-                </script>
+            <div class="sphere-header">
+                <h3>I. The Governance &amp; Jurisdictional Pillars</h3>
+            </div>
+
+            <!-- Pillar 1 -->
+            <div class="pillar-full">
+                <div class="pillar-header">
+                    <span class="pillar-number">Pillar I</span>
+                    <h2 class="pillar-title">Covenantal Law (The Codex)</h2>
+                </div>
+                <p class="pillar-subtitle">Biblical Archetype: The Early Church &mdash; Acts 2-4 &amp; 1 Corinthians 6</p>
+                <div class="pillar-body">
+                    <h4>The Concept</h4>
+                    <p>Moving from state statutes to the 81-book Ethiopian Canon and the natural law of the Divine Council. Settling disputes through local assembly and council arbitration based on biblical precedent (Matthew 18 process), rather than state-mandated litigation.</p>
+                    <h4>Practical Infrastructure</h4>
+                    <p>Community-based governance, shared resource management, and the explicit command to resolve disputes within the Covenant rather than before secular courts. Smart contract enforcement of community rulings.</p>
+                    <span class="scripture-ref">"Dare any of you, having a matter against another, go to law before the unrighteous, and not before the saints?" &mdash; 1 Corinthians 6:1</span>
+                </div>
+            </div>
+
+            <!-- Pillar 2 -->
+            <div class="pillar-full">
+                <div class="pillar-header">
+                    <span class="pillar-number">Pillar II</span>
+                    <h2 class="pillar-title">Sovereign Identity (The Passport)</h2>
+                </div>
+                <p class="pillar-subtitle">Biblical Archetype: Daniel in Babylon &mdash; Daniel 1</p>
+                <div class="pillar-body">
+                    <h4>The Concept</h4>
+                    <p>Decoupling from state-issued IDs and reclaiming identity as a sovereign steward. Identity is verified by reputation and covenantal connection, not a state database.</p>
+                    <h4>Practical Infrastructure</h4>
+                    <p>Private-key-based identities (Self-Sovereign Identity / SSI) like the Chi Rho Passport NFT system. Zero-knowledge proofs for privacy. The protocol of "compliance with conscience" &mdash; serving the state but refusing to assimilate identity.</p>
+                    <span class="scripture-ref">Daniel served the state but refused to assimilate his identity, maintaining his covenantal name and dietary purity at all costs. &mdash; Daniel 1</span>
+                </div>
+            </div>
+
+            <!-- Pillar 3 -->
+            <div class="pillar-full">
+                <div class="pillar-header">
+                    <span class="pillar-number">Pillar III</span>
+                    <h2 class="pillar-title">Defense &amp; Security (The Wall)</h2>
+                </div>
+                <p class="pillar-subtitle">Biblical Archetype: Nehemiah &mdash; Nehemiah 4</p>
+                <div class="pillar-body">
+                    <h4>The Concept</h4>
+                    <p>Security is a local community responsibility, not a state-monopoly function. Operating with a trowel in one hand and a sword in the other; recognizing that the defense of the household is the prerequisite for peace.</p>
+                    <h4>Practical Infrastructure</h4>
+                    <p>Neighborhood watch networks, encrypted communication mesh networks (LoRa, HAM radio), physical preparedness, and emergency response protocols.</p>
+                    <span class="scripture-ref">"Those who built on the wall, and those who carried burdens, loaded themselves so that with one hand they worked at construction, and with the other held a weapon." &mdash; Nehemiah 4:17</span>
+                </div>
+            </div>
+
+            <!-- SPHERE II: ECONOMIC & RESOURCE -->
+            <div class="sphere-header">
+                <h3>II. The Economic &amp; Resource Pillars</h3>
+            </div>
+
+            <!-- Pillar 4 -->
+            <div class="pillar-full">
+                <div class="pillar-header">
+                    <span class="pillar-number">Pillar IV</span>
+                    <h2 class="pillar-title">Covenant Finance (The Treasury)</h2>
+                </div>
+                <p class="pillar-subtitle">Biblical Archetype: Joseph in Egypt &mdash; Genesis 41</p>
+                <div class="pillar-body">
+                    <h4>The Concept</h4>
+                    <p>The Artificial Pool (Nehemiah 3:16). Storing wealth outside the squatter's jurisdiction. Accumulating real assets during times of fiat illusion to provide for the Covenant during times of famine.</p>
+                    <h4>Practical Infrastructure</h4>
+                    <p>The Remnant's Ledger. Direct asset-backed lending between Covenant members, PulseChain integration (pDAI, pWBTC, pTGC), and circumvention of the Fed-linked banking system. PHIAT-aligned portfolio management.</p>
+                    <span class="scripture-ref">Joseph managed resources and yield during the "seven years" of the squatter's regime &mdash; accumulating real assets during times of fiat illusion. &mdash; Genesis 41</span>
+                </div>
+            </div>
+
+            <!-- Pillar 5 -->
+            <div class="pillar-full">
+                <div class="pillar-header">
+                    <span class="pillar-number">Pillar V</span>
+                    <h2 class="pillar-title">Property &amp; Tenure (The Land)</h2>
+                </div>
+                <p class="pillar-subtitle">Biblical Archetype: Jeremiah's Field &mdash; Jeremiah 32</p>
+                <div class="pillar-body">
+                    <h4>The Concept</h4>
+                    <p>The "Leasehold" concept &mdash; owning land as a steward before the Father, recognizing the state's "tax" as a mere extortion fee until decoupling is complete.</p>
+                    <h4>Practical Infrastructure</h4>
+                    <p>Land titles held or mirrored via blockchain-anchored smart contracts (DAOs) that resist state seizure. Establishing physical "Third Place" spaces for the community.</p>
+                    <span class="scripture-ref">Jeremiah bought a field in Anathoth while the Babylonian army was actively laying siege to Jerusalem &mdash; a documented, legal act of faith that the land will ultimately return to its rightful stewards. &mdash; Jeremiah 32</span>
+                </div>
+            </div>
+
+            <!-- Pillar 6 -->
+            <div class="pillar-full">
+                <div class="pillar-header">
+                    <span class="pillar-number">Pillar VI</span>
+                    <h2 class="pillar-title">Energy Sovereignty (The Hearth)</h2>
+                </div>
+                <p class="pillar-subtitle">Biblical Archetype: The Wise Virgins &mdash; Matthew 25</p>
+                <div class="pillar-body">
+                    <h4>The Concept</h4>
+                    <p>If the state can turn off your lights, they can turn off your ability to build. Maintaining a personal, un-borrowable supply of energy to keep the lamps burning.</p>
+                    <h4>Practical Infrastructure</h4>
+                    <p>Decentralized power generation (solar, wind, battery arrays, micro-grids). Off-grid capability for the household and the community node.</p>
+                    <span class="scripture-ref">"The foolish said to the wise, 'Give us some of your oil, for our lamps are going out.' But the wise answered, saying, 'No, lest there should not be enough for us and you.'" &mdash; Matthew 25:8-9</span>
+                </div>
+            </div>
+
+            <!-- SPHERE III: CULTURAL & BIOLOGICAL -->
+            <div class="sphere-header">
+                <h3>III. The Cultural &amp; Biological Pillars</h3>
+            </div>
+
+            <!-- Pillar 7 -->
+            <div class="pillar-full">
+                <div class="pillar-header">
+                    <span class="pillar-number">Pillar VII</span>
+                    <h2 class="pillar-title">Education (The Instruction)</h2>
+                </div>
+                <p class="pillar-subtitle">Biblical Archetype: The Rechabites &mdash; Jeremiah 35</p>
+                <div class="pillar-body">
+                    <h4>The Concept</h4>
+                    <p>Breaking the state's monopoly on the mind and the narrative. A family line that faithfully maintained strict, counter-cultural instructions for generations, refusing to assimilate into the surrounding culture.</p>
+                    <h4>Practical Infrastructure</h4>
+                    <p>Homeschooling collectives using the Trivium (Grammar, Logic, Rhetoric) through the lens of the Divine Council worldview. Apprenticeships over institutional credentialing.</p>
+                    <span class="scripture-ref">"We have obeyed the voice of Jonadab the son of Rechab, our father, in all that he charged us." &mdash; Jeremiah 35:8</span>
+                </div>
+            </div>
+
+            <!-- Pillar 8 -->
+            <div class="pillar-full">
+                <div class="pillar-header">
+                    <span class="pillar-number">Pillar VIII</span>
+                    <h2 class="pillar-title">Health (The Temple)</h2>
+                </div>
+                <p class="pillar-subtitle">Biblical Archetype: The Anti-Nephilim Mandate &mdash; Genesis 6 / Leviticus</p>
+                <div class="pillar-body">
+                    <h4>The Concept</h4>
+                    <p>The body as a covenantal stewardship domain, not a pharmaceutical commodity. The preservation of biological integrity. Treating the physical body as the literal Temple of the Holy Spirit, undefiled by the sorcery (<em>pharmakeia</em>) of the beast system.</p>
+                    <h4>Practical Infrastructure</h4>
+                    <p>Independent medical records, decentralized health shares, networks of covenant-aligned practitioners (naturopaths, functional medicine), and nutrition based on the elimination of industrial toxins.</p>
+                    <span class="scripture-ref">"Do you not know that your body is a temple of the Holy Spirit within you, whom you have from God?" &mdash; 1 Corinthians 6:19</span>
+                </div>
+            </div>
+
+            <!-- Pillar 9 -->
+            <div class="pillar-full">
+                <div class="pillar-header">
+                    <span class="pillar-number">Pillar IX</span>
+                    <h2 class="pillar-title">Family (The Bloodline)</h2>
+                </div>
+                <p class="pillar-subtitle">Biblical Archetype: Abraham's Altar &mdash; Genesis 18</p>
+                <div class="pillar-body">
+                    <h4>The Concept</h4>
+                    <p>The fundamental unit of governance. We build for our posterity, not for retirement funds. The family as the primary mechanism for transmitting the Covenant across time.</p>
+                    <h4>Practical Infrastructure</h4>
+                    <p>Multi-generational living arrangements, the restoration of the patriarchal hearth, and the transfer of generational wealth (both spiritual and material) outside state probate.</p>
+                    <span class="scripture-ref">"For I have known him, in order that he may command his children and his household after him, that they keep the way of the LORD." &mdash; Genesis 18:19</span>
+                </div>
+            </div>
+
+            <!-- SPHERE IV: INFRASTRUCTURE & SERVICE -->
+            <div class="sphere-header">
+                <h3>IV. The Infrastructure &amp; Service Pillars</h3>
+            </div>
+
+            <!-- Pillar 10 -->
+            <div class="pillar-full">
+                <div class="pillar-header">
+                    <span class="pillar-number">Pillar X</span>
+                    <h2 class="pillar-title">Food Sovereignty (The Table)</h2>
+                </div>
+                <p class="pillar-subtitle">Biblical Archetype: Elijah and the Widow of Zarephath &mdash; 1 Kings 17</p>
+                <div class="pillar-body">
+                    <h4>The Concept</h4>
+                    <p>You must control the source of your calories to survive a supply chain collapse. Miraculous, decentralized provision outside the Ahab/Jezebel economic system.</p>
+                    <h4>Practical Infrastructure</h4>
+                    <p>Direct farmer-to-consumer networks, vertical farming, permaculture, seed saving, and local food cooperatives.</p>
+                    <span class="scripture-ref">"The bin of flour shall not be used up, nor shall the jar of oil run dry, until the day the LORD sends rain on the earth." &mdash; 1 Kings 17:14</span>
+                </div>
+            </div>
+
+            <!-- Pillar 11 -->
+            <div class="pillar-full">
+                <div class="pillar-header">
+                    <span class="pillar-number">Pillar XI</span>
+                    <h2 class="pillar-title">Digital Infrastructure (The ARK)</h2>
+                </div>
+                <p class="pillar-subtitle">Biblical Archetype: Noah's Ark &mdash; Genesis 6</p>
+                <div class="pillar-body">
+                    <h4>The Concept</h4>
+                    <p>Running the administrative operations of the Kingdom without relying on Big Tech's cloud-based surveillance. Building an enclosed, self-sustaining system of preservation before the floodwaters of digital tyranny arrive.</p>
+                    <h4>Practical Infrastructure</h4>
+                    <p>Open-source tools (Ollama, n8n, self-hosted servers, Linux environments). The literal "ARK" servers that house the data of the Remnant securely.</p>
+                    <span class="scripture-ref">"Make yourself an ark of gopherwood; make rooms in the ark, and cover it inside and outside with pitch." &mdash; Genesis 6:14</span>
+                </div>
+            </div>
+
+            <!-- Pillar 12 -->
+            <div class="pillar-full">
+                <div class="pillar-header">
+                    <span class="pillar-number">Pillar XII</span>
+                    <h2 class="pillar-title">The Remnant Network (The Diaspora)</h2>
+                </div>
+                <p class="pillar-subtitle">Biblical Archetype: The Exiles of the Dispersion &mdash; 1 Peter 1 / Jeremiah 29</p>
+                <div class="pillar-body">
+                    <h4>The Concept</h4>
+                    <p>A "Nation" is not a map; it is a people connected across locations through shared protocols and shared allegiance to the King. Thriving as a networked, holy nation scattered across the occupied territory, yet united by a single King.</p>
+                    <h4>Practical Infrastructure</h4>
+                    <p>The physical and digital networking of these 12 pillars. The Covenant Bureau Network connecting the Founder, the Architect, the Foundation, the Product, and the Economy.</p>
+                    <span class="scripture-ref">"Build houses and live in them; plant gardens and eat their produce... seek the welfare of the city where I have sent you into exile." &mdash; Jeremiah 29:5-7</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Call to Action -->
-    <section>
+    <!-- Operational Directive -->
+    <section style="padding: 3rem 2rem; text-align: center;">
         <div class="container">
-            <div class="card" style="text-align: center; padding: var(--spacing-lg);">
-                <h2>Ready to Build with Us?</h2>
-                <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto var(--spacing-md);">
-                    The 12 Pillars provide the complete architecture. Now we need builders to implement it. 
-                    Technical co-founders, covenant members, and contributors are all welcome.
+            <div style="max-width: 800px; margin: 0 auto;">
+                <h2>Operational Directive</h2>
+                <p style="font-size: 1.2rem; color: var(--text-primary); line-height: 1.8; margin-bottom: 2rem;">
+                    We are demonstrating that the state is a <strong>ghost</strong>&mdash;a phantom institution that only has power if you agree to participate in its ledger. We are building the <strong>Real</strong> to replace the <strong>Simulacrum</strong>.
                 </p>
-                <div style="display: flex; gap: var(--spacing-md); justify-content: center; flex-wrap: wrap; margin-top: var(--spacing-md);">
-                    <a href="join.html#builder" class="btn btn-primary">Become a Builder</a>
-                    <a href="join.html" class="btn btn-secondary">Join the Covenant</a>
+                <p style="font-size: 1.4rem; color: var(--kingdom-gold); font-family: 'Cinzel', serif; font-weight: 700;">
+                    This is NationOS. The wall is going up. Come build.
+                </p>
+                <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-top: 2.5rem;">
+                    <a href="join.html" class="btn btn-primary">Enter the Covenant</a>
+                    <a href="constitution.html" class="btn btn-secondary">Read the Constitution</a>
                 </div>
             </div>
         </div>
@@ -117,43 +395,46 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h4>NationOS</h4>
-                    <p>A Covenant Alternative to Digital Tyranny</p>
-                    <p style="margin-top: var(--spacing-sm);">Building sovereign Christian communities under Christ's Lordship.</p>
+                    <p>A Covenant Operating System for Sovereign Living</p>
+                    <p style="margin-top: var(--spacing-sm); font-style: italic; color: var(--text-secondary);">
+                        Built on the 81-Book Canon. Governed by the Divine Council Worldview. Executed in the Little Season.
+                    </p>
                 </div>
                 
                 <div class="footer-section">
-                    <h4>Quick Links</h4>
+                    <h4>Documents</h4>
                     <ul>
-                        <li><a href="about.html">About</a></li>
                         <li><a href="constitution.html">Constitution</a></li>
                         <li><a href="declaration.html">Declaration</a></li>
                         <li><a href="pillars.html">12 Pillars</a></li>
+                        <li><a href="about.html">About</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
                     <h4>Get Involved</h4>
                     <ul>
-                        <li><a href="join.html">Join the Covenant</a></li>
-                        <li><a href="join.html#builder">Become a Builder</a></li>
-                        <li><a href="education.html">Covenant Education</a></li>
+                        <li><a href="join.html">Enter the Covenant</a></li>
                         <li><a href="resources.html">Resources</a></li>
+                        <li><a href="https://github.com/LibertyThroughTruthFoundation" target="_blank">GitHub</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
-                    <h4>Connect</h4>
+                    <h4>Covenant Bureau</h4>
                     <ul>
-                        <li><a href="https://x.com/SovereignSentinel" target="_blank">X/Twitter: @SovereignSentinel</a></li>
-                        <li><a href="https://godmanmarkets.pls" target="_blank">GodManMarkets.pls</a></li>
-                        <li><a href="https://libertythroughtruth.org" target="_blank">Liberty Through Truth Foundation</a></li>
+                        <li><a href="https://x.com/LTTFoundation" target="_blank">@LTTFoundation</a></li>
+                        <li><a href="https://x.com/BryanPavlovicX" target="_blank">@BryanPavlovicX</a></li>
+                        <li><a href="https://x.com/SovereignSent" target="_blank">@SovereignSent</a></li>
+                        <li><a href="https://x.com/GodManMarkets" target="_blank">@GodManMarkets</a></li>
+                        <li><a href="https://x.com/TheNationOS" target="_blank">@TheNationOS</a></li>
                     </ul>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2025 NationOS | Liberty Through Truth Foundation | Under Christ's Lordship</p>
-                <p style="margin-top: var(--spacing-xs);">"Unless the LORD builds the house, those who build it labor in vain." - Psalm 127:1</p>
+                <p>&copy; 2026 NationOS | Liberty Through Truth Foundation | Under Christ's Lordship</p>
+                <p style="margin-top: var(--spacing-xs); font-style: italic;">"Unless the LORD builds the house, those who build it labor in vain." &mdash; Psalm 127:1</p>
             </div>
         </div>
     </footer>
