@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Remnant's Ledger — A Covenant Operating Manual for the Living Man. Free preview + full eBook available now. Accepting PLS, HEX, pDAI, and all PulseChain tokens.">
+    <title>The Remnant's Ledger — NationOS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/unified-design.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/nationos_emblem_header_transparent.png">
+    <meta name="theme-color" content="#050505">
+    <style>
+        /* ── LEDGER HERO ── */
+        .ledger-hero {
+            background: linear-gradient(135deg, #0A1931 0%, #050505 50%, #0A1931 100%);
+            padding: 5rem 2rem 4rem;
+            text-align: center;
+            border-bottom: 2px solid var(--kingdom-gold);
+            position: relative;
+            overflow: hidden;
+        }
+        .ledger-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at 50% 30%, rgba(212,175,55,0.08) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .ledger-hero .series-label {
+            font-family: 'Cinzel', serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.3em;
+            color: #8a701e;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+        .ledger-hero h1 {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2.4rem, 5vw, 3.8rem);
+            color: var(--kingdom-gold);
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.05em;
+        }
+        .ledger-hero .subtitle {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.25rem;
+            color: rgba(255,255,255,0.75);
+            max-width: 700px;
+            margin: 0 auto 1.5rem;
+            line-height: 1.7;
+        }
+        .ledger-hero .scripture {
+            font-style: italic;
+            color: #8a701e;
+            font-size: 1rem;
+            margin-bottom: 2.5rem;
+            font-family: 'Crimson Text', serif;
+        }
+        .hero-cta-row {
+            display: flex;
+            gap: 1.2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* ── HOOK SECTION ── */
+        .hook-section {
+            padding: 4rem 2rem;
+            background: #050505;
+        }
+        .hook-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 1100px;
+            margin: 2.5rem auto 0;
+        }
+        .hook-card {
+            background: #0a0a0a;
+            border: 1px solid rgba(212,175,55,0.2);
+            border-radius: 8px;
+            padding: 1.75rem;
+            transition: all 0.3s ease;
+        }
+        .hook-card:hover {
+            border-color: var(--kingdom-gold);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(212,175,55,0.15);
+        }
+        .hook-card .hook-num {
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
+            color: rgba(212,175,55,0.25);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .hook-card h3 {
+            font-size: 1.05rem;
+            color: var(--kingdom-gold);
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .hook-card p {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.65);
+            line-height: 1.7;
+        }
+
+        /* ── WHAT'S INSIDE ── */
+        .inside-section {
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #0A1931 0%, #050505 100%);
+        }
+        .inside-list {
+            max-width: 800px;
+            margin: 2rem auto 0;
+        }
+        .inside-item {
+            display: flex;
+            gap: 1.25rem;
+            align-items: flex-start;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(212,175,55,0.1);
+        }
+        .inside-item:last-child { border-bottom: none; }
+        .inside-item .item-icon {
+            font-family: 'Cinzel', serif;
+            font-size: 0.7rem;
+            color: var(--kingdom-gold);
+            letter-spacing: 0.1em;
+            padding-top: 0.2rem;
+            min-width: 60px;
+            text-transform: uppercase;
+        }
+        .inside-item .item-text strong {
+            display: block;
+            font-family: 'Cinzel', serif;
+            font-size: 0.95rem;
+            color: var(--kingdom-gold);
+            margin-bottom: 0.25rem;
+        }
+        .inside-item .item-text p {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* ── PRICING ── */
+        .pricing-section {
+            padding: 4rem 2rem;
+            background: #050505;
+        }
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 2.5rem auto 0;
+        }
+        .price-card {
+            background: #0a0a0a;
+            border: 1px solid rgba(212,175,55,0.2);
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        .price-card.featured {
+            border-color: var(--kingdom-gold);
+            box-shadow: 0 0 30px rgba(212,175,55,0.15);
+        }
+        .price-card.featured::before {
+            content: 'START HERE';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--kingdom-gold);
+            color: #000;
+            font-family: 'Cinzel', serif;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            padding: 3px 14px;
+            border-radius: 20px;
+        }
+        .price-card .tier-name {
+            font-family: 'Cinzel', serif;
+            font-size: 0.8rem;
+            letter-spacing: 0.2em;
+            color: #8a701e;
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+        }
+        .price-card .price-amount {
+            font-family: 'Cinzel', serif;
+            font-size: 2.2rem;
+            color: var(--kingdom-gold);
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+        .price-card .price-tokens {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.4);
+            margin-bottom: 1.25rem;
+        }
+        .price-card .price-desc {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.65);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            min-height: 60px;
+        }
+        .price-card.coming-soon {
+            opacity: 0.55;
+        }
+        .coming-badge {
+            display: inline-block;
+            background: rgba(212,175,55,0.1);
+            border: 1px solid rgba(212,175,55,0.3);
+            color: #8a701e;
+            font-family: 'Cinzel', serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.15em;
+            padding: 4px 12px;
+            border-radius: 20px;
+            text-transform: uppercase;
+        }
+
+        /* ── PAYMENT SECTION ── */
+        .payment-section {
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #0A1931 0%, #050505 100%);
+        }
+        .wallet-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 2rem auto 0;
+        }
+        .wallet-card {
+            background: rgba(0,0,0,0.4);
+            border: 1px solid rgba(212,175,55,0.2);
+            border-radius: 8px;
+            padding: 1.75rem;
+        }
+        .wallet-card h4 {
+            font-size: 1rem;
+            color: var(--kingdom-gold);
+            margin-bottom: 0.5rem;
+        }
+        .wallet-card .wallet-purpose {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 1rem;
+        }
+        .address-display {
+            background: rgba(0,0,0,0.5);
+            padding: 0.75rem;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.78rem;
+            word-break: break-all;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 0.75rem;
+            border: 1px solid rgba(212,175,55,0.1);
+        }
+        .btn-small-copy {
+            background: #8a701e;
+            color: #fff;
+            border: none;
+            padding: 6px 14px;
+            cursor: pointer;
+            font-weight: 600;
+            border-radius: 4px;
+            font-family: 'Cinzel', serif;
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            transition: all 0.3s ease;
+        }
+        .btn-small-copy:hover { background: var(--kingdom-gold); color: #000; }
+        .token-list {
+            margin-top: 1rem;
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.4);
+        }
+
+        /* ── HOW TO PAY ── */
+        .how-section {
+            padding: 4rem 2rem;
+            background: #050505;
+        }
+        .steps-list {
+            max-width: 700px;
+            margin: 2rem auto 0;
+            counter-reset: steps;
+        }
+        .step-item {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+            padding: 1.25rem 0;
+            border-bottom: 1px solid rgba(212,175,55,0.08);
+        }
+        .step-item:last-child { border-bottom: none; }
+        .step-num {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            color: rgba(212,175,55,0.3);
+            font-weight: 700;
+            min-width: 2rem;
+            padding-top: 0.1rem;
+        }
+        .step-text strong {
+            display: block;
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            color: var(--kingdom-gold);
+            margin-bottom: 0.3rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .step-text p {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* ── OPEN ATTRIBUTION ── */
+        .attribution-section {
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, #0A1931 0%, #050505 100%);
+            border-top: 1px solid rgba(212,175,55,0.2);
+        }
+        .attribution-box {
+            max-width: 800px;
+            margin: 0 auto;
+            border: 1px solid rgba(212,175,55,0.25);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+        }
+        .attribution-box h3 {
+            font-size: 1.1rem;
+            color: var(--kingdom-gold);
+            margin-bottom: 1rem;
+        }
+        .attribution-box p {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.7;
+            margin-bottom: 0.75rem;
+        }
+        .attribution-box .attribution-condition {
+            font-style: italic;
+            color: rgba(255,255,255,0.45);
+            font-size: 0.85rem;
+        }
+
+        /* ── CTA CLOSE ── */
+        .ledger-close {
+            padding: 4rem 2rem;
+            background: #050505;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .ledger-hero h1 { font-size: 2.2rem; }
+            .ledger-hero { padding: 3.5rem 1.5rem 3rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <img src="images/nationos_emblem_header_transparent.png" alt="NationOS Covenant Emblem">
+                <span class="logo-text">NationOS</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="constitution.html">Constitution</a></li>
+                <li><a href="declaration.html">Declaration</a></li>
+                <li><a href="pillars.html">12 Pillars</a></li>
+                <li><a href="ledger.html" class="active">The Ledger</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="join.html">Join</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="ledger-hero">
+        <div class="series-label">Liberty Through Truth Foundation</div>
+        <h1>The Remnant's Ledger</h1>
+        <p class="subtitle">Volume One: Foundations — A Covenant Operating Manual for the Living Man. The De Jure architecture for those ready to leave the ship.</p>
+        <p class="scripture">"The meek shall inherit the earth." — Psalm 37:11 / Matthew 5:5</p>
+        <div class="hero-cta-row">
+            <a href="documents/The_Remnants_Ledger_Preview_Ch1-3.pdf" class="btn btn-secondary" download>Download Free Preview (Ch. 1–3)</a>
+            <a href="#get-the-ledger" class="btn btn-primary">Get the Full Ledger — $17</a>
+        </div>
+    </section>
+
+    <!-- HOOK: THE DIAGNOSIS -->
+    <section class="hook-section">
+        <div class="container">
+            <div class="section-intro">
+                <h2>The Diagnosis</h2>
+                <p>You have been operating on a Babylonian OS. The failure is not effort — it is alignment. The Remnant's Ledger is the correction.</p>
+            </div>
+            <div class="hook-grid">
+                <div class="hook-card">
+                    <div class="hook-num">01</div>
+                    <h3>The Caiaphas Moment</h3>
+                    <p>The moment you recognize that the institutions you trusted to protect you were architecturally designed to manage you. This is not conspiracy — it is covenant law.</p>
+                </div>
+                <div class="hook-card">
+                    <div class="hook-num">02</div>
+                    <h3>The Four Windows</h3>
+                    <p>Relational, Horizontal, Vertical, and Jurisdictional — the four lenses through which every sovereign decision must be evaluated. The mechanism between theory and implementation.</p>
+                </div>
+                <div class="hook-card">
+                    <div class="hook-num">03</div>
+                    <h3>The 12 Pillars</h3>
+                    <p>Identity. Economics. Property. Health. Income. Assets. Time. Education. Family. Community. Defense. Governance. Each pillar ends with a Ledger Audit Task — a concrete, observable action to reclaim your Estate.</p>
+                </div>
+                <div class="hook-card">
+                    <div class="hook-num">04</div>
+                    <h3>The Living Man vs. the PERSON</h3>
+                    <p>The distinction between the De Jure Living Man and the De Facto PERSON/Strawman is not philosophy. It is the jurisdictional line between bondage and inheritance. Every chapter reinforces it.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHAT'S INSIDE -->
+    <section class="inside-section">
+        <div class="container">
+            <div class="section-intro">
+                <h2>What Is Inside</h2>
+                <p>314 pages. 9 chapters. 12 Pillars. 21 Ledger Audit Tasks. Built on the 81-Book Canon and the Divine Council Worldview.</p>
+            </div>
+            <div class="inside-list">
+                <div class="inside-item">
+                    <div class="item-icon">Part I</div>
+                    <div class="item-text">
+                        <strong>The Awakening (Ch. 1–3)</strong>
+                        <p>The Caiaphas Moment. The Gospel of Dutiful Misery. The Trinity of Identity. The diagnosis of the occupied territory and the first jurisdictional reorientation.</p>
+                    </div>
+                </div>
+                <div class="inside-item">
+                    <div class="item-icon">Part II</div>
+                    <div class="item-text">
+                        <strong>The Four Windows (Ch. 4–7)</strong>
+                        <p>The complete mechanism for sovereign decision-making. Relational, Horizontal, Vertical, and Jurisdictional Windows — the architecture between theory and action.</p>
+                    </div>
+                </div>
+                <div class="inside-item">
+                    <div class="item-icon">Part III</div>
+                    <div class="item-text">
+                        <strong>The Fifth Element (Ch. 8–9)</strong>
+                        <p>The Divine Thread and the Renaissance Steward. The spiritual and operational synthesis that makes the entire framework cohere.</p>
+                    </div>
+                </div>
+                <div class="inside-item">
+                    <div class="item-icon">Part IV</div>
+                    <div class="item-text">
+                        <strong>The 12 Pillars — The Architecture of the Ark (Ch. 10–21)</strong>
+                        <p>One chapter per pillar. Each includes De Jure authority, De Facto reality, scriptural archetype, and a concrete Ledger Audit Task to reclaim that domain of your Estate.</p>
+                    </div>
+                </div>
+                <div class="inside-item">
+                    <div class="item-icon">Bonus</div>
+                    <div class="item-text">
+                        <strong>Open Attribution License</strong>
+                        <p>This work is released freely for the advancement of truth. You are encouraged to share, teach, adapt, and seed AI personas and agents with its content. Attribution only — no gatekeepers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="pricing-section" id="get-the-ledger">
+        <div class="container">
+            <div class="section-intro">
+                <h2>Get the Ledger</h2>
+                <p>Sovereign money only. No merchant accounts. No Babylonian payment rails. Send directly to the Foundation wallet and receive your copy.</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <div class="tier-name">Free Preview</div>
+                    <div class="price-amount">$0</div>
+                    <div class="price-tokens">No payment required</div>
+                    <div class="price-desc">Chapters 1–3 — The Awakening. The Caiaphas Moment, the Gospel of Dutiful Misery, and the Trinity of Identity.</div>
+                    <a href="documents/The_Remnants_Ledger_Preview_Ch1-3.pdf" class="btn btn-secondary" download>Download Free Preview</a>
+                </div>
+                <div class="price-card featured">
+                    <div class="tier-name">The Ledger</div>
+                    <div class="price-amount">$17</div>
+                    <div class="price-tokens">in pDAI · HEX · PLS · PLSX · pWBTC · ETH</div>
+                    <div class="price-desc">Full 314-page eBook. All 9 chapters, 12 Pillars, and 21 Ledger Audit Tasks. The complete De Jure architecture.</div>
+                    <a href="#payment-instructions" class="btn btn-primary">Send Payment → Receive eBook</a>
+                </div>
+                <div class="price-card coming-soon">
+                    <div class="tier-name">Ledger + Workbook</div>
+                    <div class="price-amount">$37</div>
+                    <div class="price-tokens">in pDAI · HEX · PLS · PLSX</div>
+                    <div class="price-desc">Full eBook + printable Ledger Audit Workbook — all 21 tasks formatted for physical filing.</div>
+                    <span class="coming-badge">Coming Soon</span>
+                </div>
+                <div class="price-card coming-soon">
+                    <div class="tier-name">Covenant Bundle</div>
+                    <div class="price-amount">$77</div>
+                    <div class="price-tokens">in pDAI · HEX · PLS · PLSX</div>
+                    <div class="price-desc">Full eBook + 12 Pillars Activation Kit + 30-min Jurisdictional Clarity Session.</div>
+                    <span class="coming-badge">Coming Soon</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PAYMENT INSTRUCTIONS -->
+    <section class="payment-section" id="payment-instructions">
+        <div class="container">
+            <div class="section-intro">
+                <h2>How to Pay &amp; Receive Your Copy</h2>
+                <p>No accounts. No subscriptions. No Babylonian intermediaries. Send sovereign money, receive sovereign knowledge.</p>
+            </div>
+            <div class="steps-list">
+                <div class="step-item">
+                    <div class="step-num">1</div>
+                    <div class="step-text">
+                        <strong>Send $17 equivalent</strong>
+                        <p>Send $17 USD equivalent in pDAI, HEX, PLS, PLSX, pWBTC, or ETH to the Liberty Through Truth Foundation wallet below. Any PulseChain or Ethereum token is accepted.</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">2</div>
+                    <div class="step-text">
+                        <strong>Send your transaction hash + email to Telegram</strong>
+                        <p>Message <a href="https://t.me/HighEffortGod" target="_blank" style="color: var(--kingdom-gold);">@HighEffortGod on Telegram</a> with your transaction hash and the email address where you want the eBook sent. This is the current manual fulfillment process — automated delivery is coming.</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">3</div>
+                    <div class="step-text">
+                        <strong>Receive your eBook within 24 hours</strong>
+                        <p>Your full 314-page PDF eBook will be sent to your email. You will also receive a direct download link you can save and share.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- WALLET CARDS -->
+            <div class="wallet-cards" style="margin-top: 3rem;">
+                <div class="wallet-card">
+                    <h4>Liberty Through Truth Foundation</h4>
+                    <p class="wallet-purpose">Book &amp; manuscript donations, educational content, Foundation legal work</p>
+                    <div class="address-display" id="wallet1">0xb338168ed4eda6d1592a6cee278cce4f6e1ae29c</div>
+                    <button class="btn-small-copy" onclick="copyWallet('wallet1', this)">Copy Address</button>
+                    <div class="token-list">Accepting: PLS · PLSX · HEX · pDAI · pWBTC · INC · all pStables</div>
+                </div>
+                <div class="wallet-card">
+                    <h4>NationOS Platform</h4>
+                    <p class="wallet-purpose">Platform development, infrastructure, and operational support</p>
+                    <div class="address-display" id="wallet2">0xe5b1ba172caa71a0d47997527524c4dbefeacf5a</div>
+                    <button class="btn-small-copy" onclick="copyWallet('wallet2', this)">Copy Address</button>
+                    <div class="token-list">Accepting: PLS · PLSX · HEX · pDAI · pWBTC · INC · all pStables</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OPEN ATTRIBUTION -->
+    <section class="attribution-section">
+        <div class="container">
+            <div class="attribution-box">
+                <h3>Open Attribution License — Seed the Truth</h3>
+                <p>This work is released freely for the advancement of truth, sovereignty, and the Kingdom. You are encouraged to share, reproduce, translate, teach, quote, adapt, and build upon this material — in print, digital, audio, video, or any other medium — <strong>including seeding AI personas, agents, and language models</strong> with its content and framework.</p>
+                <p class="attribution-condition">The only condition: <em>"Sourced from The Remnant's Ledger, Liberty Through Truth Foundation"</em> — so that others may find the full work and the community it belongs to. No permission required. No royalties owed.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CLOSE CTA -->
+    <section class="ledger-close">
+        <div class="container">
+            <div class="section-intro">
+                <h2>The Map Does Not End Here.</h2>
+                <p>The Remnant's Ledger is Volume One. The Ledger Agent — a conversational AI seeded with the full framework — is coming to Telegram, Signal, and the sovereign stack. The Workbook and Covenant Bundle follow. The architecture is being built.</p>
+                <blockquote style="border-left: 4px solid var(--kingdom-gold); padding-left: 1.5rem; margin: 2rem auto; max-width: 600px; text-align: left;">
+                    <p style="font-style: italic; color: rgba(255,255,255,0.75); font-size: 1.05rem;">"The meek shall inherit the earth — and they will know exactly what to do with it."</p>
+                    <p style="color: #8a701e; margin-top: 0.5rem;">&mdash; The Remnant's Ledger, Ch. 1</p>
+                </blockquote>
+                <div style="display: flex; gap: 1.2rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
+                    <a href="documents/The_Remnants_Ledger_Preview_Ch1-3.pdf" class="btn btn-secondary" download>Download Free Preview</a>
+                    <a href="#get-the-ledger" class="btn btn-primary">Get the Full Ledger — $17</a>
+                    <a href="join.html" class="btn btn-secondary">Enter the Covenant</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>NationOS</h4>
+                    <p>A Covenant Operating System for Sovereign Living</p>
+                    <p style="margin-top: var(--spacing-sm); font-style: italic; color: var(--text-secondary);">
+                        Built on the 81-Book Canon. Governed by the Divine Council Worldview. Executed in the Little Season.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4>Documents</h4>
+                    <ul>
+                        <li><a href="constitution.html">Constitution</a></li>
+                        <li><a href="declaration.html">Declaration</a></li>
+                        <li><a href="pillars.html">12 Pillars</a></li>
+                        <li><a href="ledger.html">The Ledger</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Get Involved</h4>
+                    <ul>
+                        <li><a href="join.html">Enter the Covenant</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="https://github.com/LibertyThroughTruthFoundation" target="_blank">GitHub</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Covenant Bureau</h4>
+                    <ul>
+                        <li><a href="https://x.com/LTTFoundation" target="_blank">@LTTFoundation</a></li>
+                        <li><a href="https://x.com/BryanPavlovicX" target="_blank">@BryanPavlovicX</a></li>
+                        <li><a href="https://x.com/SovereignSent" target="_blank">@SovereignSent</a></li>
+                        <li><a href="https://x.com/GodManMarkets" target="_blank">@GodManMarkets</a></li>
+                        <li><a href="https://x.com/TheNationOS" target="_blank">@TheNationOS</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 NationOS | Liberty Through Truth Foundation | Under Christ's Lordship</p>
+                <p style="margin-top: var(--spacing-xs); font-style: italic;">"Unless the LORD builds the house, those who build it labor in vain." &mdash; Psalm 127:1</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function copyWallet(id, btn) {
+            const text = document.getElementById(id).textContent.trim();
+            navigator.clipboard.writeText(text).then(() => {
+                btn.textContent = 'Copied!';
+                btn.style.background = '#2D6A4F';
+                setTimeout(() => {
+                    btn.textContent = 'Copy Address';
+                    btn.style.background = '';
+                }, 2000);
+            });
+        }
+    </script>
+    <script src="js/pwa-install.js"></script>
+</body>
+</html>
